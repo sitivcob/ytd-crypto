@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-
-    <!-- Otomatik Dil Yönlendirme Scripti -->
-    <script>
-        // Sadece ana dizinde çalışsın ve sonsuz döngüye girmesin
-        if (!sessionStorage.getItem('langRedirected') && (window.location.pathname === '/' || window.location.pathname.endsWith('index.html'))) {
-            sessionStorage.setItem('langRedirected', 'true');
-            const userLang = (navigator.language || navigator.userLanguage).split('-')[0];
-            const supportedLangs = ['tr', 'de', 'fr', 'es', 'ja', 'ko', 'pt', 'ru'];
-            
-            if (supportedLangs.includes(userLang)) {
-                window.location.replace(userLang + '.html');
-            }
-        }
-    </script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YTD Crypto Tracker & AI Radar</title>
@@ -27,10 +12,26 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome -->
+    <!-- FontAwesome (İkonlar) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom Theme -->
+    <!-- Bayrak İkonları Kütüphanesi -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
+
+    <!-- Otomatik Dil Yönlendirme Scripti (Sadece Global Ana Sayfada Çalışır) -->
+    <script>
+        if (!sessionStorage.getItem('langRedirected') && (window.location.pathname === '/' || window.location.pathname.endsWith('index.html'))) {
+            sessionStorage.setItem('langRedirected', 'true');
+            const userLang = (navigator.language || navigator.userLanguage).split('-')[0];
+            const supportedLangs = ['tr', 'de', 'fr', 'es', 'ja', 'ko', 'pt', 'ru'];
+            
+            if (supportedLangs.includes(userLang)) {
+                window.location.replace(userLang + '.html');
+            }
+        }
+    </script>
+
+    <!-- Uygulamamıza Özel Renk Paleti -->
     <script>
         tailwind.config = {
             theme: {
@@ -44,11 +45,11 @@
 </head>
 <body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative">
 
-    <!-- Background Glow -->
+    <!-- ARKA PLAN GÖRSEL ZENGİNLİĞİ -->
     <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-bluePro/10 blur-[150px] pointer-events-none -z-10"></div>
     <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gold/5 blur-[150px] pointer-events-none -z-10"></div>
 
-    <!-- NAVBAR & LANGUAGE SWITCHER -->
+    <!-- ÜST MENÜ (NAVBAR) -->
     <nav class="fixed w-full z-50 bg-darkBg/80 backdrop-blur-xl border-b border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -61,14 +62,17 @@
                     <a href="#gallery" class="text-gray-300 hover:text-white transition font-medium">Screens</a>
                     <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">Pro Chart</a>
                     
-                    <!-- DİL SEÇİCİ (LANGUAGE SWITCHER) -->
-                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-700 text-xs font-bold text-gray-500">
-                        <a href="index.html" class="hover:text-white transition" title="Türkçe">TR</a>
-                        <span class="text-gold">EN</span>
-                        <a href="de.html" class="hover:text-white transition" title="Deutsch">DE</a>
-                        <a href="es.html" class="hover:text-white transition" title="Español">ES</a>
-                        <a href="fr.html" class="hover:text-white transition" title="Français">FR</a>
-                        <!-- İhtiyaca göre diğer diller eklenebilir -->
+                    <!-- DİL SEÇİCİ (İNGİLİZCE AKTİF - BAYRAKLI) -->
+                    <div class="flex items-center gap-3 ml-4 pl-4 border-l border-gray-700 text-xl">
+                        <a href="index.html" class="scale-110 drop-shadow-[0_0_8px_rgba(243,186,47,0.8)]" title="English"><span class="fi fi-gb rounded-sm"></span></a>
+                        <a href="tr.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Türkçe"><span class="fi fi-tr rounded-sm"></span></a>
+                        <a href="de.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Deutsch"><span class="fi fi-de rounded-sm"></span></a>
+                        <a href="fr.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Français"><span class="fi fi-fr rounded-sm"></span></a>
+                        <a href="es.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Español"><span class="fi fi-es rounded-sm"></span></a>
+                        <a href="ja.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="日本語"><span class="fi fi-jp rounded-sm"></span></a>
+                        <a href="ko.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="한국어"><span class="fi fi-kr rounded-sm"></span></a>
+                        <a href="pt.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Português"><span class="fi fi-pt rounded-sm"></span></a>
+                        <a href="ru.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Русский"><span class="fi fi-ru rounded-sm"></span></a>
                     </div>
                 </div>
                 <div>
@@ -80,7 +84,7 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
+    <!-- KAHRAMAN BÖLÜMÜ (HERO) -->
     <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 overflow-hidden relative">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div class="flex-1 text-center lg:text-left z-10">
@@ -122,7 +126,6 @@
             
             <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
                 <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
-                <!-- ENG GÖRSELLERİ BURADA (eng-02.png) -->
                 <img src="eng-02.png" alt="YTD Spot Buy Report" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
             </div>
         </div>
@@ -137,7 +140,6 @@
             </div>
             
             <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
-                <!-- TÜM GÖRSELLER eng PREFİKSİNE ÇEVRİLDİ -->
                 <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
                     <img src="eng-01.png" alt="AI Chart Analysis" class="w-full h-auto">
                 </div>
