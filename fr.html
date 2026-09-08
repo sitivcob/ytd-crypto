@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- FRANSIZCA UYGULAMA İSMİ -->
     <title>YTD Tracker Crypto & Radar IA</title>
     <meta name="description" content="Radar crypto alimenté par l'IA, analyse graphique avancée et gestion de portefeuille. Synchronisé sur tous vos appareils, sécurisé et gratuit.">
     
@@ -16,22 +15,16 @@
     <!-- FontAwesome (İkonlar) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Bayrak İkonları Kütüphanesi -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
+
     <!-- Uygulamamıza Özel Renk Paleti -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        darkBg: '#0B0E14',
-                        cardBg: '#151924',
-                        gold: '#F3BA2F',
-                        greenUp: '#00C582',
-                        redDown: '#FF3358',
-                        bluePro: '#2962FF'
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'], },
+                    colors: { darkBg: '#0B0E14', cardBg: '#151924', gold: '#F3BA2F', greenUp: '#00C582', redDown: '#FF3358', bluePro: '#2962FF' }
                 }
             }
         }
@@ -56,17 +49,20 @@
                     <a href="#gallery" class="text-gray-300 hover:text-white transition font-medium">Écrans</a>
                     <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">Graphiques Pro</a>
                     
-                    <!-- DİL SEÇİCİ (FRANSIZCA AKTİF) -->
-                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-700 text-xs font-bold text-gray-500">
-                        <a href="index.html" class="hover:text-white transition" title="Türkçe">TR</a>
-                        <a href="eng.html" class="hover:text-white transition" title="English">EN</a>
-                        <a href="de.html" class="hover:text-white transition" title="Deutsch">DE</a>
-                        <a href="es.html" class="hover:text-white transition" title="Español">ES</a>
-                        <span class="text-gold">FR</span>
+                    <!-- DİL SEÇİCİ (FRANSIZCA AKTİF - BAYRAKLI) -->
+                    <div class="flex items-center gap-3 ml-4 pl-4 border-l border-gray-700 text-xl">
+                        <a href="index.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="English"><span class="fi fi-gb rounded-sm"></span></a>
+                        <a href="tr.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Türkçe"><span class="fi fi-tr rounded-sm"></span></a>
+                        <a href="de.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Deutsch"><span class="fi fi-de rounded-sm"></span></a>
+                        <a href="fr.html" class="scale-110 drop-shadow-[0_0_8px_rgba(243,186,47,0.8)]" title="Français"><span class="fi fi-fr rounded-sm"></span></a>
+                        <a href="es.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Español"><span class="fi fi-es rounded-sm"></span></a>
+                        <a href="ja.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="日本語"><span class="fi fi-jp rounded-sm"></span></a>
+                        <a href="ko.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="한국어"><span class="fi fi-kr rounded-sm"></span></a>
+                        <a href="pt.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Português"><span class="fi fi-pt rounded-sm"></span></a>
+                        <a href="ru.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Русский"><span class="fi fi-ru rounded-sm"></span></a>
                     </div>
                 </div>
                 <div>
-                    <!-- Resmi Rozet -->
                     <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-0.5 transition duration-300 hover:drop-shadow-[0_0_15px_rgba(243,186,47,0.4)]">
                         <img src="Google_Play.png" alt="Disponible sur Google Play" class="h-10 w-auto object-contain">
                     </a>
@@ -78,7 +74,6 @@
     <!-- KAHRAMAN BÖLÜMÜ (HERO) -->
     <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 overflow-hidden relative">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            <!-- Sol Metin Alanı -->
             <div class="flex-1 text-center lg:text-left z-10">
                 <div class="inline-flex items-center px-4 py-2 rounded-full border border-gold/30 bg-gold/5 text-gold text-sm font-semibold mb-6 shadow-[0_0_15px_rgba(243,186,47,0.1)]">
                     <span class="relative flex h-2.5 w-2.5 mr-2.5">
@@ -107,24 +102,17 @@
                         </a>
                     </div>
                     
-                    <!-- SOSYAL KANIT (5 Yıldız) -->
                     <div class="flex items-center gap-3 text-sm mt-2">
                         <div class="flex text-gold text-sm drop-shadow-md">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <span class="text-gray-400 font-medium tracking-wide">Le Choix des Investisseurs</span>
                     </div>
                 </div>
             </div>
             
-            <!-- Sağ Görsel Alanı -->
             <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
                 <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
-                <!-- FRANSIZCA GÖRSEL (fr-02.png) -->
                 <img src="fr-02.png" alt="YTD Rapport d'Achat Spot" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
             </div>
         </div>
@@ -139,7 +127,6 @@
             </div>
             
             <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
-                <!-- TÜM GÖRSELLER fr PREFİKSİNE ÇEVRİLDİ -->
                 <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
                     <img src="fr-01.png" alt="Analyse Graphique IA" class="w-full h-auto">
                 </div>
