@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
+
+    <!-- Otomatik Dil Yönlendirme Scripti -->
+    <script>
+        // Sadece ana dizinde çalışsın ve sonsuz döngüye girmesin
+        if (!sessionStorage.getItem('langRedirected') && (window.location.pathname === '/' || window.location.pathname.endsWith('index.html'))) {
+            sessionStorage.setItem('langRedirected', 'true');
+            const userLang = (navigator.language || navigator.userLanguage).split('-')[0];
+            const supportedLangs = ['tr', 'de', 'fr', 'es', 'ja', 'ko', 'pt', 'ru'];
+            
+            if (supportedLangs.includes(userLang)) {
+                window.location.replace(userLang + '.html');
+            }
+        }
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YTD Crypto Tracker & AI Radar</title>
