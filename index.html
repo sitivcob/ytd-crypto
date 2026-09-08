@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- TAM UYGULAMA İSMİ EKLENDİ -->
     <title>YTD Kripto Takip & AI Analizi</title>
     <meta name="description" content="Yapay zeka destekli kripto radarı, gelişmiş grafik analizi ve portföy yönetimi. Tüm cihazlarınızda senkronize, güvenli ve ücretsiz.">
     
@@ -39,7 +38,7 @@
 </head>
 <body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative">
 
-    <!-- ARKA PLAN GÖRSEL ZENGİNLİĞİ (Sitenin boş görünmesini engeller) -->
+    <!-- ARKA PLAN GÖRSEL ZENGİNLİĞİ -->
     <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-bluePro/10 blur-[150px] pointer-events-none -z-10"></div>
     <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gold/5 blur-[150px] pointer-events-none -z-10"></div>
 
@@ -48,9 +47,8 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
-                    <!-- LOGO ALANI -->
                     <img src="ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
-                    <span class="font-bold text-lg lg:text-xl tracking-tight hidden sm:block">YTD <span class="text-gold">Kripto & AI</span></span>
+                    <span class="font-bold text-lg lg:text-xl tracking-tight hidden sm:block">YTD <span class="text-gold">Kripto Takip</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#ozellikler" class="text-gray-300 hover:text-white transition font-medium">Özellikler</a>
@@ -58,9 +56,9 @@
                     <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">Pro Grafik</a>
                 </div>
                 <div>
-                    <!-- GERÇEK PLAY STORE LİNKİ EKLENDİ -->
-                    <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="bg-gold text-black px-6 py-2.5 rounded-xl font-bold hover:bg-yellow-500 transition shadow-[0_0_20px_rgba(243,186,47,0.25)] text-sm sm:text-base">
-                        Google Play'de Gör
+                    <!-- Resmi Rozet (Navbar için ufak boyutlu) -->
+                    <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-0.5 transition duration-300 hover:shadow-[0_0_15px_rgba(243,186,47,0.3)] rounded-lg overflow-hidden">
+                        <img src="Google_Play.png" alt="Google Play'den İndir" class="h-10 w-auto">
                     </a>
                 </div>
             </div>
@@ -72,7 +70,6 @@
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <!-- Sol Metin Alanı -->
             <div class="flex-1 text-center lg:text-left z-10">
-                <!-- ROKET YERİNE PROFESYONEL NABIZ ATAN (PULSE) GÖSTERGE -->
                 <div class="inline-flex items-center px-4 py-2 rounded-full border border-gold/30 bg-gold/5 text-gold text-sm font-semibold mb-6 shadow-[0_0_15px_rgba(243,186,47,0.1)]">
                     <span class="relative flex h-2.5 w-2.5 mr-2.5">
                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
@@ -89,26 +86,41 @@
                 <p class="text-lg lg:text-xl text-gray-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                     Normalde yüksek abonelik ücretleri gerektiren premium finans araçlarını tamamen ücretsiz kullanın. Yatırımcılar için özel tasarlanmış yeni nesil AI destekli kripto takip, canlı borsa grafikleri ve portföy yönetim terminali.
                 </p>
-                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                    <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-greenUp text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-400 transition-all duration-300 flex items-center justify-center shadow-[0_0_25px_rgba(0,197,130,0.3)] hover:shadow-[0_0_35px_rgba(0,197,130,0.5)] transform hover:-translate-y-1">
-                        <i class="fa-brands fa-google-play mr-3 text-xl"></i> Ücretsiz İndir
-                    </a>
-                    <a href="#ozellikler" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-lg text-white border border-gray-700 hover:bg-gray-800 transition flex items-center justify-center">
-                        Özellikleri Keşfet
-                    </a>
+                
+                <div class="flex flex-col items-center lg:items-start gap-4">
+                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <!-- Resmi Google Play Rozeti -->
+                        <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:shadow-[0_0_25px_rgba(243,186,47,0.4)] rounded-xl">
+                            <img src="Google_Play.png" alt="Google Play'den İndir" class="h-16 w-auto">
+                        </a>
+                        <a href="#ozellikler" class="px-8 py-4 rounded-xl font-bold text-lg text-white border border-gray-700 hover:bg-gray-800 transition flex items-center justify-center">
+                            Özellikleri Keşfet
+                        </a>
+                    </div>
+                    
+                    <!-- SOSYAL KANIT (5 Yıldız) -->
+                    <div class="flex items-center gap-3 text-sm mt-2">
+                        <div class="flex text-gold text-sm drop-shadow-md">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-gray-400 font-medium tracking-wide">Yatırımcıların Tercihi</span>
+                    </div>
                 </div>
             </div>
             
             <!-- Sağ Görsel Alanı (Akıllı Tilt Efekti Sadece PC'de) -->
             <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
                 <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
-                <!-- Çerçeveler hafifletildi, çok daha şık bir cam kılıf (glass) eklendi -->
                 <img src="tr-02.png" alt="YTD Spot Al Raporu" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
             </div>
         </div>
     </section>
 
-    <!-- GALERİ BÖLÜMÜ -->
+    <!-- GALERİ BÖLÜMÜ (8 Görsellik Kusursuz Simetri) -->
     <section id="galeri" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -117,9 +129,12 @@
             </div>
             
             <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
-                <!-- Yuvarlak köşeler ve gölgeler premium seviyeye çekildi -->
+                <!-- 1'den 8'e kadar tüm ekranlar sıralandı -->
                 <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
                     <img src="tr-01.png" alt="AI Grafik Analizi" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="tr-02.png" alt="Spot Al Raporu" class="w-full h-auto">
                 </div>
                 <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
                     <img src="tr-03.png" alt="Vadeli Al Raporu" class="w-full h-auto">
@@ -143,7 +158,7 @@
         </div>
     </section>
 
-    <!-- ÖZELLİKLER BÖLÜMÜ (Boş hissettirmemesi için tasarım zenginleştirildi) -->
+    <!-- ÖZELLİKLER BÖLÜMÜ -->
     <section id="ozellikler" class="py-24 bg-darkBg border-t border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -162,7 +177,7 @@
                         Siz uyurken piyasada ani bir çöküş veya panik satışı olursa sistem uyanır ve sizi anında uyarır. Yatırımlarınız 7/24 güvende.
                     </p>
                 </div>
-                <!-- Kutu 2 (YENİ ETİKETİ KALDIRILDI) -->
+                <!-- Kutu 2 -->
                 <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
                     <div class="w-14 h-14 bg-bluePro/10 rounded-2xl flex items-center justify-center text-bluePro text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(41,98,255,0.1)]">
                         <i class="fa-solid fa-headphones"></i>
@@ -186,13 +201,12 @@
         </div>
     </section>
 
-    <!-- TEKNİK İNDİKATÖRLER BÖLÜMÜ (BOŞ KUTUCUK HATASI DÜZELTİLDİ) -->
+    <!-- TEKNİK İNDİKATÖRLER BÖLÜMÜ -->
     <section id="ai-radar" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
             <div class="flex-1">
                 <h2 class="text-3xl lg:text-5xl font-black mb-8 tracking-tight">Yapay Zeka Radarı ve Pro Grafik</h2>
                 <div class="space-y-6">
-                    <!-- Her bir özellik şık, dolu dolu görünen cam kartlar (glass cards) içine alındı -->
                     <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
                         <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-robot"></i></div>
                         <div class="ml-4">
@@ -219,7 +233,6 @@
                 </div>
             </div>
             
-            <!-- Sağdaki Kod Terminali Şıklaştırıldı -->
             <div class="flex-1 w-full bg-[#0d1117] rounded-3xl p-8 border border-gray-800 font-mono text-sm text-gray-300 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
                 <div class="absolute top-5 right-6 flex gap-2">
                     <div class="w-3 h-3 rounded-full bg-redDown"></div>
@@ -239,12 +252,13 @@
     <footer id="indir" class="bg-black py-16 border-t border-gray-900 relative">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-black mb-4">Tüm Cihazlarınızda Senkronize ve Erişilebilir</h2>
-            <p class="text-gray-400 mb-10 leading-relaxed text-base">
+            <p class="text-gray-400 mb-8 leading-relaxed text-base">
                 Bulut senkronizasyonu ile verilerinizi taşıyın veya yerel yedekleme/geri yükleme kullanın. Dilediğiniz para birimini seçin, yazı boyutlarını özelleştirin.<br><strong class="text-white mt-2 block">YTD'yi hemen indirin ve yapay zekanın gücünü cebinize taşıyın!</strong>
             </p>
             
-            <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-gray-900 border border-gray-800 hover:border-gold px-10 py-4 rounded-2xl text-white font-bold transition-all duration-300 mb-12 shadow-[0_0_15px_rgba(255,255,255,0.05)] hover:shadow-[0_0_30px_rgba(243,186,47,0.4)] transform hover:-translate-y-1">
-                <i class="fa-brands fa-google-play mr-3 text-gold text-2xl"></i> Google Play'den Ücretsiz İndir
+            <!-- Resmi Google Play Rozeti (Büyük Boy) -->
+            <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:shadow-[0_0_30px_rgba(243,186,47,0.3)] rounded-2xl mb-10 overflow-hidden">
+                <img src="Google_Play.png" alt="Google Play'den İndir" class="h-20 w-auto">
             </a>
             
             <div class="text-xs text-gray-500 max-w-3xl mx-auto italic mb-8">
@@ -261,9 +275,8 @@
     <!-- VanillaTilt Kütüphanesi -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     
-    <!-- AKILLI TİLT EFEKTİ (Sadece Bilgisayarlar İçin, Mobilde Düz Duracak) -->
+    <!-- AKILLI TİLT EFEKTİ -->
     <script>
-        // Sadece ekran genişliği 768px'den büyükse (Bilgisayar/Tablet yatay) efekti çalıştır
         if (window.innerWidth > 768) {
             VanillaTilt.init(document.querySelector(".tilt-image"), {
                 max: 12,
