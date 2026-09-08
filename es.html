@@ -6,19 +6,11 @@
     <title>YTD Radar Cripto & Análisis IA</title>
     <meta name="description" content="Radar cripto impulsado por IA, análisis de gráficos avanzado y gestión de cartera. Sincronizado en todos tus dispositivos, seguro y gratis.">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome (İkonlar) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Bayrak İkonları Kütüphanesi -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
 
-    <!-- Uygulamamıza Özel Renk Paleti -->
     <script>
         tailwind.config = {
             theme: {
@@ -32,24 +24,23 @@
 </head>
 <body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative">
 
-    <!-- ARKA PLAN GÖRSEL ZENGİNLİĞİ -->
     <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-bluePro/10 blur-[150px] pointer-events-none -z-10"></div>
     <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gold/5 blur-[150px] pointer-events-none -z-10"></div>
 
-    <!-- ÜST MENÜ (NAVBAR) -->
-    <nav class="fixed w-full z-50 bg-darkBg/80 backdrop-blur-xl border-b border-gray-800/50">
+    <nav class="fixed w-full z-50 bg-darkBg/90 backdrop-blur-xl border-b border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
                     <img src="ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
                     <span class="font-bold text-lg lg:text-xl tracking-tight hidden sm:block">YTD <span class="text-gold">Radar Cripto</span></span>
                 </div>
+                
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#features" class="text-gray-300 hover:text-white transition font-medium">Características</a>
                     <a href="#gallery" class="text-gray-300 hover:text-white transition font-medium">Pantallas</a>
                     <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">Gráfico Pro</a>
                     
-                    <!-- DİL SEÇİCİ (İSPANYOLCA AKTİF - BAYRAKLI) -->
+                    <!-- Masaüstü Dil Seçici -->
                     <div class="flex items-center gap-3 ml-4 pl-4 border-l border-gray-700 text-xl">
                         <a href="index.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="English"><span class="fi fi-gb rounded-sm"></span></a>
                         <a href="tr.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Türkçe"><span class="fi fi-tr rounded-sm"></span></a>
@@ -62,16 +53,40 @@
                         <a href="ru.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Русский"><span class="fi fi-ru rounded-sm"></span></a>
                     </div>
                 </div>
-                <div>
+
+                <div class="flex items-center gap-3 sm:gap-4">
                     <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-0.5 transition duration-300 hover:drop-shadow-[0_0_15px_rgba(243,186,47,0.4)]">
-                        <img src="Google_Play.png" alt="Disponible en Google Play" class="h-10 w-auto object-contain">
+                        <img src="Google_Play.png" alt="Disponible en Google Play" class="h-9 sm:h-10 w-auto object-contain">
                     </a>
+                    <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none ml-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobil Açılır Menü -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darkBg/95 backdrop-blur-xl border-b border-gray-800 shadow-2xl absolute w-full left-0 top-20 transition-all duration-300">
+            <div class="px-4 pt-4 pb-6 flex flex-col space-y-4 text-center">
+                <a href="#features" class="text-gray-300 hover:text-white font-medium text-lg block py-2">Características</a>
+                <a href="#gallery" class="text-gray-300 hover:text-white font-medium text-lg block py-2">Pantallas</a>
+                <a href="#ai-radar" class="text-gray-300 hover:text-white font-medium text-lg block py-2">Gráfico Pro</a>
+                
+                <div class="pt-4 mt-2 border-t border-gray-700 flex flex-wrap justify-center gap-5 text-2xl">
+                    <a href="index.html" class="opacity-60"><span class="fi fi-gb rounded-sm"></span></a>
+                    <a href="tr.html" class="opacity-60"><span class="fi fi-tr rounded-sm"></span></a>
+                    <a href="de.html" class="opacity-60"><span class="fi fi-de rounded-sm"></span></a>
+                    <a href="fr.html" class="opacity-60"><span class="fi fi-fr rounded-sm"></span></a>
+                    <a href="es.html" class="drop-shadow-[0_0_8px_rgba(243,186,47,0.8)]"><span class="fi fi-es rounded-sm"></span></a>
+                    <a href="ja.html" class="opacity-60"><span class="fi fi-jp rounded-sm"></span></a>
+                    <a href="ko.html" class="opacity-60"><span class="fi fi-kr rounded-sm"></span></a>
+                    <a href="pt.html" class="opacity-60"><span class="fi fi-pt rounded-sm"></span></a>
+                    <a href="ru.html" class="opacity-60"><span class="fi fi-ru rounded-sm"></span></a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- KAHRAMAN BÖLÜMÜ (HERO) -->
     <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 overflow-hidden relative">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div class="flex-1 text-center lg:text-left z-10">
@@ -118,7 +133,6 @@
         </div>
     </section>
 
-    <!-- GALERİ BÖLÜMÜ -->
     <section id="gallery" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -155,7 +169,6 @@
         </div>
     </section>
 
-    <!-- ÖZELLİKLER BÖLÜMÜ -->
     <section id="features" class="py-24 bg-darkBg border-t border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -195,7 +208,6 @@
         </div>
     </section>
 
-    <!-- TEKNİK İNDİKATÖRLER BÖLÜMÜ -->
     <section id="ai-radar" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
             <div class="flex-1">
@@ -242,7 +254,6 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer id="download" class="bg-black py-16 border-t border-gray-900 relative">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-black mb-4">Sincronizado y Accesible en Todos Sus Dispositivos</h2>
@@ -265,17 +276,14 @@
         </div>
     </footer>
 
-    <!-- VanillaTilt Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-    
     <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
+
         if (window.innerWidth > 768) {
-            VanillaTilt.init(document.querySelector(".tilt-image"), {
-                max: 12,
-                speed: 400,
-                glare: true,
-                "max-glare": 0.15
-            });
+            VanillaTilt.init(document.querySelector(".tilt-image"), { max: 12, speed: 400, glare: true, "max-glare": 0.15 });
         }
     </script>
 </body>
