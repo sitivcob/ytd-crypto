@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JAPONCA UYGULAMA İSMİ -->
+    <title>YTD 仮想通貨トラッカー & AI分析</title>
+    <meta name="description" content="AI搭載の仮想通貨レーダー、高度なチャート分析、ポートフォリオ管理。すべてのデバイスで同期、安全、そして無料。">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Japonca karakterler için Noto Sans JP eklendi) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (İkonlar) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Uygulamamıza Özel Renk Paleti -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#0B0E14',
+                        cardBg: '#151924',
+                        gold: '#F3BA2F',
+                        greenUp: '#00C582',
+                        redDown: '#FF3358',
+                        bluePro: '#2962FF'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative">
+
+    <!-- ARKA PLAN GÖRSEL ZENGİNLİĞİ -->
+    <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-bluePro/10 blur-[150px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gold/5 blur-[150px] pointer-events-none -z-10"></div>
+
+    <!-- ÜST MENÜ (NAVBAR) -->
+    <nav class="fixed w-full z-50 bg-darkBg/80 backdrop-blur-xl border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <img src="ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
+                    <span class="font-bold text-lg lg:text-xl tracking-tight hidden sm:block">YTD <span class="text-gold">仮想通貨トラッカー</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#features" class="text-gray-300 hover:text-white transition font-medium">機能</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-white transition font-medium">画面</a>
+                    <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">プロチャート</a>
+                    
+                    <!-- DİL SEÇİCİ (JAPONCA AKTİF) -->
+                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-700 text-xs font-bold text-gray-500">
+                        <a href="index.html" class="hover:text-white transition" title="Türkçe">TR</a>
+                        <a href="eng.html" class="hover:text-white transition" title="English">EN</a>
+                        <a href="de.html" class="hover:text-white transition" title="Deutsch">DE</a>
+                        <a href="es.html" class="hover:text-white transition" title="Español">ES</a>
+                        <a href="fr.html" class="hover:text-white transition" title="Français">FR</a>
+                        <span class="text-gold">JA</span>
+                    </div>
+                </div>
+                <div>
+                    <!-- Resmi Rozet -->
+                    <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-0.5 transition duration-300 hover:drop-shadow-[0_0_15px_rgba(243,186,47,0.4)]">
+                        <img src="Google_Play.png" alt="Google Playで手に入れよう" class="h-10 w-auto object-contain">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- KAHRAMAN BÖLÜMÜ (HERO) -->
+    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <!-- Sol Metin Alanı -->
+            <div class="flex-1 text-center lg:text-left z-10">
+                <div class="inline-flex items-center px-4 py-2 rounded-full border border-gold/30 bg-gold/5 text-gold text-sm font-semibold mb-6 shadow-[0_0_15px_rgba(243,186,47,0.1)]">
+                    <span class="relative flex h-2.5 w-2.5 mr-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold"></span>
+                    </span>
+                    現物＆先物AIレーダー稼働中
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter mb-6 leading-[1.2]">
+                    仮想通貨を追跡するだけでなく、<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">理解しよう。</span>
+                </h1>
+                
+                <p class="text-lg lg:text-xl text-gray-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    通常は高額なプレミアム金融ツールを完全無料で利用可能。投資家のために特別に設計された次世代のAI搭載仮想通貨トラッカー、ライブチャート、ポートフォリオ管理端末。
+                </p>
+                
+                <div class="flex flex-col items-center lg:items-start gap-4">
+                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_20px_rgba(243,186,47,0.4)]">
+                            <img src="Google_Play.png" alt="Google Playで手に入れよう" class="h-14 lg:h-16 w-auto object-contain">
+                        </a>
+                        <a href="#features" class="px-8 py-4 rounded-xl font-bold text-lg text-white border border-gray-700 hover:bg-gray-800 transition flex items-center justify-center">
+                            機能を見る
+                        </a>
+                    </div>
+                    
+                    <!-- SOSYAL KANIT (5 Yıldız) -->
+                    <div class="flex items-center gap-3 text-sm mt-2">
+                        <div class="flex text-gold text-sm drop-shadow-md">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-gray-400 font-medium tracking-wide">投資家たちの選択</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sağ Görsel Alanı -->
+            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
+                <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
+                <!-- JAPONCA GÖRSEL (ja-02.png) -->
+                <img src="ja-02.png" alt="YTD 現物買いレポート" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERİ BÖLÜMÜ -->
+    <section id="gallery" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-black mb-4 tracking-tight">市場全体を支配する</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">クラウド同期から4分割プロマルチスクリーン追跡まで、プロのトレーダーが必要とするすべてのツール。</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
+                <!-- TÜM GÖRSELLER ja PREFİKSİNE ÇEVRİLDİ -->
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ja-01.png" alt="AIチャート分析" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ja-02.png" alt="現物買いレポート" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ja-03.png" alt="先物買いレポート" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ja-04.png" alt="プロマルチスクリーン" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ja-05.png" alt="スマートアラーム" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ja-06.png" alt="資産とポートフォリオ" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ja-07.png" alt="クラウド同期" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ja-08.png" alt="市場とトレンド" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÖZELLİKLER BÖLÜMÜ -->
+    <section id="features" class="py-24 bg-darkBg border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-black mb-4 tracking-tight">革新的な注目機能</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">通常の追跡アプリの枠を超えて。あなたに代わって市場を監視し、読み解き、耳を傾けるスマートアシスタントをご紹介します。</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-redDown/10 rounded-2xl flex items-center justify-center text-redDown text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(255,51,88,0.1)]">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">ナイトウォッチマン</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        寝ている間に市場で突然の暴落やパニック売りが発生した場合、システムが起動し即座に警告します。あなたの投資は24時間365日安全です。
+                    </p>
+                </div>
+                <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-bluePro/10 rounded-2xl flex items-center justify-center text-bluePro text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(41,98,255,0.1)]">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">音声アシスタント＆ウィジェット</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        移動中にヘッドホンから最新価格を聞くことができます。または、アプリを開かずに通知バーとウィジェットから直接追跡できます。
+                    </p>
+                </div>
+                <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-greenUp/10 rounded-2xl flex items-center justify-center text-greenUp text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(0,197,130,0.1)]">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AIウォレットドクター</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        保管画面からリアルタイムの損益を追跡します。人工知能が資産配分を分析し、詳細なポートフォリオリスクレポートを提供します。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEKNİK İNDİKATÖRLER BÖLÜMÜ -->
+    <section id="ai-radar" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
+            <div class="flex-1">
+                <h2 class="text-3xl lg:text-5xl font-black mb-8 tracking-tight">AIレーダーとプロチャート</h2>
+                <div class="space-y-6">
+                    <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
+                        <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-robot"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">自動仮想通貨シグナル</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">BTCとアルトコイン向けのロケット（ブレイクアウト）、ディップハンター（売られすぎ）、ハイブリッド戦略による24時間365日のパターン検出とロング/ショート候補レーダー。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
+                        <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">板情報とクジラPOC</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">VOL、RSI、ボリンジャーバンドを備えたプロフェッショナルチャート。ボリューム、クジラPOC（ポイント・オブ・コントロール）、買い手/売り手の圧力を1つの画面で読み解きます。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
+                        <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-calculator"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">3ウェイ・クロス計算機</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">購入額、数量、目標、手数料率を入力することで、取引を開始する前に総控除額、粗利益、実際の純利益を計算します。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex-1 w-full bg-[#0d1117] rounded-3xl p-8 border border-gray-800 font-mono text-sm text-gray-300 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
+                <div class="absolute top-5 right-6 flex gap-2">
+                    <div class="w-3 h-3 rounded-full bg-redDown"></div>
+                    <div class="w-3 h-3 rounded-full bg-gold"></div>
+                    <div class="w-3 h-3 rounded-full bg-greenUp"></div>
+                </div>
+                <div class="text-gray-500 mb-6 font-bold tracking-widest text-xs uppercase">// AIブレイクアウトレーダー</div>
+                <div class="mb-3"><span class="text-bluePro font-semibold">アルゴリズム:</span> ロケット戦略 🚀</div>
+                <div class="mb-3"><span class="text-gold font-semibold">パターン:</span> 対称トライアングル・ブレイクアウト</div>
+                <div class="mb-6"><span class="text-greenUp font-semibold">信頼性:</span> 88% (非常に高い)</div>
+                <div class="text-gray-400 leading-relaxed border-l-2 border-gray-700 pl-4">"システムは、価格がボリューム（クジラPOC）を伴って水平な保ち合いから上方にブレイクアウトしたことを検出しました。強い上昇の可能性が存在します。ストップロスレベルを維持しながらポジションを評価できます。"</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="download" class="bg-black py-16 border-t border-gray-900 relative">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black mb-4">すべてのデバイスで同期・アクセス可能</h2>
+            <p class="text-gray-400 mb-8 leading-relaxed text-base">
+                クラウド同期でデータを持ち歩くか、ローカルのバックアップ/復元を使用します。任意の通貨を選択し、フォントサイズをカスタマイズ。<br><strong class="text-white mt-2 block">今すぐYTDをダウンロードして、AIの力をポケットに持ち歩きましょう！</strong>
+            </p>
+            
+            <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_25px_rgba(243,186,47,0.4)] mb-10">
+                <img src="Google_Play.png" alt="Google Playで手に入れよう" class="h-16 lg:h-20 w-auto object-contain">
+            </a>
+            
+            <div class="text-xs text-gray-500 max-w-3xl mx-auto italic mb-8">
+                (免責事項：本アプリケーション内の分析およびデータは人工知能アルゴリズムによって生成されたものであり、決して投資アドバイス（YTD）を構成するものではありません。暗号資産投資には高いリスクが伴います。)
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-sm text-gray-600 border-t border-gray-900 pt-8">
+                <a href="https://docs.google.com/document/d/1se12jpj3VZfuHtXRXwn6x3jt23NGt8h0-v9zR--hKxM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition">プライバシーポリシー</a>
+                <span>&copy; 2026 YTD 仮想通貨トラッカー & AI分析. 無断複写・転載を禁じます。</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VanillaTilt Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    
+    <script>
+        if (window.innerWidth > 768) {
+            VanillaTilt.init(document.querySelector(".tilt-image"), {
+                max: 12,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.15
+            });
+        }
+    </script>
+</body>
+</html>
