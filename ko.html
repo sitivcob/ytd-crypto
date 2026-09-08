@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- KORECE UYGULAMA İSMİ -->
+    <title>YTD 암호화폐 트래커 & AI 분석</title>
+    <meta name="description" content="AI 기반 암호화폐 레이더, 고급 차트 분석 및 포트폴리오 관리. 모든 기기에서 동기화되며 안전하고 무료입니다.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts (Korece karakterler için Noto Sans KR eklendi) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (İkonlar) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Uygulamamıza Özel Renk Paleti -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans KR"', 'Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#0B0E14',
+                        cardBg: '#151924',
+                        gold: '#F3BA2F',
+                        greenUp: '#00C582',
+                        redDown: '#FF3358',
+                        bluePro: '#2962FF'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative">
+
+    <!-- ARKA PLAN GÖRSEL ZENGİNLİĞİ -->
+    <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-bluePro/10 blur-[150px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gold/5 blur-[150px] pointer-events-none -z-10"></div>
+
+    <!-- ÜST MENÜ (NAVBAR) -->
+    <nav class="fixed w-full z-50 bg-darkBg/80 backdrop-blur-xl border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <img src="ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
+                    <span class="font-bold text-lg lg:text-xl tracking-tight hidden sm:block">YTD <span class="text-gold">암호화폐 트래커</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#features" class="text-gray-300 hover:text-white transition font-medium">기능</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-white transition font-medium">화면</a>
+                    <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">프로 차트</a>
+                    
+                    <!-- DİL SEÇİCİ (KORECE AKTİF) -->
+                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-700 text-xs font-bold text-gray-500">
+                        <a href="index.html" class="hover:text-white transition" title="Türkçe">TR</a>
+                        <a href="eng.html" class="hover:text-white transition" title="English">EN</a>
+                        <a href="de.html" class="hover:text-white transition" title="Deutsch">DE</a>
+                        <a href="es.html" class="hover:text-white transition" title="Español">ES</a>
+                        <a href="fr.html" class="hover:text-white transition" title="Français">FR</a>
+                        <a href="ja.html" class="hover:text-white transition" title="日本語">JA</a>
+                        <span class="text-gold">KO</span>
+                    </div>
+                </div>
+                <div>
+                    <!-- Resmi Rozet -->
+                    <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-0.5 transition duration-300 hover:drop-shadow-[0_0_15px_rgba(243,186,47,0.4)]">
+                        <img src="Google_Play.png" alt="Google Play에서 다운로드" class="h-10 w-auto object-contain">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- KAHRAMAN BÖLÜMÜ (HERO) -->
+    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <!-- Sol Metin Alanı -->
+            <div class="flex-1 text-center lg:text-left z-10">
+                <div class="inline-flex items-center px-4 py-2 rounded-full border border-gold/30 bg-gold/5 text-gold text-sm font-semibold mb-6 shadow-[0_0_15px_rgba(243,186,47,0.1)]">
+                    <span class="relative flex h-2.5 w-2.5 mr-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold"></span>
+                    </span>
+                    현물 및 선물 AI 레이더 활성화됨
+                </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter mb-6 leading-[1.2]">
+                    암호화폐를 추적만 하지 말고,<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">이해하세요.</span>
+                </h1>
+                
+                <p class="text-lg lg:text-xl text-gray-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    보통 높은 구독료가 필요한 프리미엄 금융 도구를 완전 무료로 사용하세요. 투자자를 위해 특별히 설계된 차세대 AI 지원 암호화폐 트래커, 실시간 거래소 차트 및 포트폴리오 관리 단말기입니다.
+                </p>
+                
+                <div class="flex flex-col items-center lg:items-start gap-4">
+                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_20px_rgba(243,186,47,0.4)]">
+                            <img src="Google_Play.png" alt="Google Play에서 다운로드" class="h-14 lg:h-16 w-auto object-contain">
+                        </a>
+                        <a href="#features" class="px-8 py-4 rounded-xl font-bold text-lg text-white border border-gray-700 hover:bg-gray-800 transition flex items-center justify-center">
+                            기능 살펴보기
+                        </a>
+                    </div>
+                    
+                    <!-- SOSYAL KANIT (5 Yıldız) -->
+                    <div class="flex items-center gap-3 text-sm mt-2">
+                        <div class="flex text-gold text-sm drop-shadow-md">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-gray-400 font-medium tracking-wide">투자자들의 선택</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sağ Görsel Alanı -->
+            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
+                <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
+                <!-- KORECE GÖRSEL (ko-02.png) -->
+                <img src="ko-02.png" alt="YTD 현물 매수 보고서" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERİ BÖLÜMÜ -->
+    <section id="gallery" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-black mb-4 tracking-tight">전체 시장을 지배하세요</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">클라우드 동기화부터 4분할 프로 멀티스크린 추적까지, 전문 트레이더에게 필요한 모든 도구를 제공합니다.</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
+                <!-- TÜM GÖRSELLER ko PREFİKSİNE ÇEVRİLDİ -->
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ko-01.png" alt="AI 차트 분석" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ko-02.png" alt="현물 매수 보고서" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ko-03.png" alt="선물 매수 보고서" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ko-04.png" alt="프로 멀티스크린" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ko-05.png" alt="스마트 알람" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ko-06.png" alt="금고 및 포트폴리오" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ko-07.png" alt="클라우드 동기화" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="ko-08.png" alt="시장 및 트렌드" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÖZELLİKLER BÖLÜMÜ -->
+    <section id="features" class="py-24 bg-darkBg border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-black mb-4 tracking-tight">혁신적이고 돋보이는 기능</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">일반적인 추적 앱을 넘어섭니다. 당신을 대신해 시장을 주시하고, 읽고, 귀 기울이는 스마트 어시스턴트를 만나보세요.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-redDown/10 rounded-2xl flex items-center justify-center text-redDown text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(255,51,88,0.1)]">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">야간 경비원</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        당신이 자는 동안 시장에 갑작스러운 폭락이나 패닉 셀링이 발생하면 시스템이 깨어나 즉시 경고합니다. 당신의 투자는 24시간 안전합니다.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-bluePro/10 rounded-2xl flex items-center justify-center text-bluePro text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(41,98,255,0.1)]">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">음성 비서 및 위젯</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        이동 중에도 헤드폰으로 현재 가격을 들어보세요. 또는 앱을 열지 않고도 알림 표시줄과 위젯을 통해 홈 화면에서 직접 추적할 수 있습니다.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-greenUp/10 rounded-2xl flex items-center justify-center text-greenUp text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(0,197,130,0.1)]">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI 지갑 닥터</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        금고 화면에서 실시간 손익을 추적하세요. 인공지능이 자산 분포를 분석하고 상세한 포트폴리오 위험 보고서를 제공합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEKNİK İNDİKATÖRLER BÖLÜMÜ -->
+    <section id="ai-radar" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
+            <div class="flex-1">
+                <h2 class="text-3xl lg:text-5xl font-black mb-8 tracking-tight">AI 레이더 및 프로 차트</h2>
+                <div class="space-y-6">
+                    <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
+                        <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-robot"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">자동 암호화폐 시그널</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">BTC 및 알트코인을 위한 로켓(돌파), 딥 헌터(과매도) 및 하이브리드 전략을 통한 연중무휴 패턴 감지 및 롱/숏 후보 레이더.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
+                        <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">호가창 및 고래 POC</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">VOL, RSI, 볼린저 밴드가 포함된 전문 차트. 거래량, 고래 POC(Point of Control), 매수/매도 압력을 단일 화면에서 읽어냅니다.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
+                        <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-calculator"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">3방향 크로스 계산기</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">거래를 시작하기 전에 매수가, 수량, 목표가 및 수수료율을 입력하여 총 공제액, 총 수익 및 실제 순이익을 계산하세요.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex-1 w-full bg-[#0d1117] rounded-3xl p-8 border border-gray-800 font-mono text-sm text-gray-300 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
+                <div class="absolute top-5 right-6 flex gap-2">
+                    <div class="w-3 h-3 rounded-full bg-redDown"></div>
+                    <div class="w-3 h-3 rounded-full bg-gold"></div>
+                    <div class="w-3 h-3 rounded-full bg-greenUp"></div>
+                </div>
+                <div class="text-gray-500 mb-6 font-bold tracking-widest text-xs uppercase">// AI 돌파 레이더</div>
+                <div class="mb-3"><span class="text-bluePro font-semibold">알고리즘:</span> 로켓 전략 🚀</div>
+                <div class="mb-3"><span class="text-gold font-semibold">패턴:</span> 대칭 삼각형 돌파</div>
+                <div class="mb-6"><span class="text-greenUp font-semibold">신뢰도:</span> 88% (매우 높음)</div>
+                <div class="text-gray-400 leading-relaxed border-l-2 border-gray-700 pl-4">"시스템이 가격이 거래량(고래 POC)을 동반하며 수평 보합세를 위로 돌파했음을 감지했습니다. 강한 상승 움직임의 가능성이 존재합니다. 스탑로스 수준을 유지하며 포지션을 평가할 수 있습니다."</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="download" class="bg-black py-16 border-t border-gray-900 relative">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black mb-4">모든 기기에서 동기화 및 접근 가능</h2>
+            <p class="text-gray-400 mb-8 leading-relaxed text-base">
+                클라우드 동기화로 데이터를 옮기거나 로컬 백업/복원을 사용하세요. 원하는 통화를 선택하고 글꼴 크기를 맞춤 설정하세요.<br><strong class="text-white mt-2 block">지금 YTD를 다운로드하고 내 주머니 속에 AI의 힘을 담으세요!</strong>
+            </p>
+            
+            <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_25px_rgba(243,186,47,0.4)] mb-10">
+                <img src="Google_Play.png" alt="Google Play에서 다운로드" class="h-16 lg:h-20 w-auto object-contain">
+            </a>
+            
+            <div class="text-xs text-gray-500 max-w-3xl mx-auto italic mb-8">
+                (면책 조항: 이 애플리케이션의 분석 및 데이터는 인공 지능 알고리즘에 의해 생성되었으며 어떠한 경우에도 투자 조언(YTD)을 구성하지 않습니다. 암호화폐 투자는 높은 위험을 수반합니다.)
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-sm text-gray-600 border-t border-gray-900 pt-8">
+                <a href="https://docs.google.com/document/d/1se12jpj3VZfuHtXRXwn6x3jt23NGt8h0-v9zR--hKxM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition">개인정보 처리방침</a>
+                <span>&copy; 2026 YTD 암호화폐 트래커 & AI 분석. 모든 권리 보유.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VanillaTilt Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    
+    <script>
+        if (window.innerWidth > 768) {
+            VanillaTilt.init(document.querySelector(".tilt-image"), {
+                max: 12,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.15
+            });
+        }
+    </script>
+</body>
+</html>
