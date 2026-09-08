@@ -6,7 +6,7 @@
     <title>YTD Crypto Tracker & AI Radar</title>
     <meta name="description" content="Yapay Zeka destekli kripto formasyon tarayıcı, profesyonel teknik indikatörler ve canlı portföy takibi. Ücretsiz indir!">
     
-    <!-- Tailwind CSS (Kurulumsuz, Işık Hızında Tasarım) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
@@ -43,20 +43,20 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
-                    <!-- Logo İkonu (Gerçek logonu buraya ekleyeceğiz) -->
-                    <div class="w-10 h-10 bg-gold rounded-lg flex items-center justify-center text-darkBg font-bold text-xl">
-                        <i class="fa-solid fa-chart-line"></i>
+                    <!-- Orijinal Logon -->
+                    <div class="w-10 h-10 rounded-lg overflow-hidden shadow-lg border border-gray-700">
+                        <img src="logo.png" alt="YTD Logo" class="w-full h-full object-cover">
                     </div>
                     <span class="font-bold text-xl tracking-tight">YTD <span class="text-gold">Crypto</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#ozellikler" class="text-gray-300 hover:text-gold transition">Özellikler</a>
+                    <a href="#galeri" class="text-gray-300 hover:text-gold transition">Ekranlar</a>
                     <a href="#ai-radar" class="text-gray-300 hover:text-gold transition">AI Radar</a>
-                    <a href="#akademi" class="text-gray-300 hover:text-gold transition">Akademi</a>
                 </div>
                 <div>
                     <a href="#indir" class="bg-gold text-black px-6 py-2.5 rounded-lg font-bold hover:bg-yellow-500 transition shadow-[0_0_15px_rgba(243,186,47,0.3)]">
-                        Google Play'de İncele
+                        Play Store'da Gör
                     </a>
                 </div>
             </div>
@@ -69,7 +69,7 @@
             <!-- Sol Metin Alanı -->
             <div class="flex-1 text-center lg:text-left z-10">
                 <div class="inline-block px-4 py-1.5 rounded-full border border-gold/30 bg-gold/10 text-gold text-sm font-semibold mb-6">
-                    <i class="fa-solid fa-rocket mr-2"></i> Kırılım Radarı Aktif
+                    <i class="fa-solid fa-rocket mr-2"></i> Spot ve Vadeli AI Raporu Aktif
                 </div>
                 <h1 class="text-5xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
                     Piyasayı <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">Yapay Zeka</span> ile Okuyun.
@@ -81,25 +81,61 @@
                     <a href="#indir" class="w-full sm:w-auto bg-greenUp text-black px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-400 transition flex items-center justify-center shadow-[0_0_20px_rgba(0,197,130,0.3)]">
                         <i class="fa-brands fa-google-play mr-3 text-xl"></i> Ücretsiz İndir
                     </a>
-                    <a href="#ozellikler" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-lg text-white border border-gray-700 hover:bg-gray-800 transition flex items-center justify-center">
-                        Özellikleri Keşfet
+                    <a href="#galeri" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-lg text-white border border-gray-700 hover:bg-gray-800 transition flex items-center justify-center">
+                        Ekranlara Göz At
                     </a>
                 </div>
             </div>
             
-            <!-- Sağ Telefon Mockup Alanı (.png olarak düzeltildi) -->
-<div class="flex-1 relative w-full max-w-md mx-auto">
-    <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full"></div>
-    <div class="relative bg-cardBg border-[8px] border-gray-900 rounded-[3rem] h-[600px] w-[300px] mx-auto shadow-2xl flex items-center justify-center overflow-hidden">
-        <img src="tr-02.png" alt="YTD Spot Al Raporu" class="w-full h-full object-cover">
-    </div>
-</div>
+            <!-- Sağ Telefon Mockup Alanı (Havalı Kalın Çerçeve Geri Döndü!) -->
+            <div class="flex-1 relative w-full max-w-md mx-auto">
+                <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0"></div>
+                <!-- CSS ile Çizilmiş Telefon Kasası -->
+                <div class="relative bg-cardBg border-[8px] border-gray-900 rounded-[3rem] h-[600px] w-[300px] mx-auto shadow-2xl flex items-center justify-center overflow-hidden z-10">
+                    <!-- Saf Ekran Görüntüsü -->
+                    <img src="tr-02.png" alt="YTD Spot Al Raporu" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERİ BÖLÜMÜ -->
+    <section id="galeri" class="py-20 bg-darkBg border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Tüm Piyasaya Tek Ekrandan Hükmet</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Bulut senkronizasyonundan, çoklu ekran takibine kadar profesyonel bir trader'ın ihtiyaç duyduğu tüm cephanelik.</p>
+            </div>
+            
+            <!-- Resim Izgarası -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8">
+                <div class="rounded-2xl overflow-hidden border border-gray-800 hover:border-gold transition duration-300 transform hover:-translate-y-2 shadow-lg">
+                    <img src="tr-01.png" alt="AI Grafik Analizi" class="w-full h-auto">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-gray-800 hover:border-gold transition duration-300 transform hover:-translate-y-2 shadow-lg">
+                    <img src="tr-03.png" alt="Vadeli Al Raporu" class="w-full h-auto">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-gray-800 hover:border-gold transition duration-300 transform hover:-translate-y-2 shadow-lg">
+                    <img src="tr-04.png" alt="Pro Çoklu Ekran" class="w-full h-auto">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-gray-800 hover:border-gold transition duration-300 transform hover:-translate-y-2 shadow-lg">
+                    <img src="tr-05.png" alt="Akıllı Alarmlar" class="w-full h-auto">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-gray-800 hover:border-gold transition duration-300 transform hover:-translate-y-2 shadow-lg">
+                    <img src="tr-06.png" alt="Kasa ve Portföy" class="w-full h-auto">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-gray-800 hover:border-gold transition duration-300 transform hover:-translate-y-2 shadow-lg">
+                    <img src="tr-07.png" alt="Bulut Senkronizasyonu" class="w-full h-auto">
+                </div>
+                <div class="rounded-2xl overflow-hidden border border-gray-800 hover:border-gold transition duration-300 transform hover:-translate-y-2 shadow-lg md:col-span-1 lg:col-span-2">
+                    <img src="tr-08.png" alt="Piyasalar ve Trendler" class="w-full h-auto">
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ÖZELLİKLER BÖLÜMÜ -->
-    <section id="ozellikler" class="py-20 bg-cardBg">
+    <section id="ozellikler" class="py-20 bg-cardBg border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl lg:text-4xl font-bold mb-4">Profesyoneller İçin Tasarlandı</h2>
@@ -143,7 +179,7 @@
     </section>
 
     <!-- TEKNİK İNDİKATÖRLER BÖLÜMÜ -->
-    <section class="py-20 bg-darkBg border-t border-gray-800">
+    <section id="ai-radar" class="py-20 bg-darkBg border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
             <div class="flex-1">
                 <h2 class="text-3xl lg:text-4xl font-bold mb-6">Ticaret Stratejinizi Güçlendirin</h2>
@@ -194,7 +230,7 @@
             <h2 class="text-2xl font-bold mb-6">Portföyünüzü Kontrol Altına Alın</h2>
             <p class="text-gray-400 mb-8">9 farklı dil desteğiyle şimdi Google Play'de ücretsiz.</p>
             
-            <a href="#" class="inline-flex items-center bg-gray-900 border border-gray-800 hover:border-gold px-8 py-3 rounded-full text-white font-bold transition mb-12">
+            <a href="#" class="inline-flex items-center bg-gray-900 border border-gray-800 hover:border-gold px-8 py-3 rounded-full text-white font-bold transition mb-12 shadow-[0_0_10px_rgba(255,255,255,0.05)] hover:shadow-[0_0_20px_rgba(243,186,47,0.3)]">
                 <i class="fa-brands fa-google-play mr-3 text-gold text-xl"></i> Google Play'den İndir
             </a>
             
