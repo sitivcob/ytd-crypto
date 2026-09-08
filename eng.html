@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YTD Crypto Tracker & AI Radar</title>
+    <meta name="description" content="AI-powered crypto radar, advanced chart analysis, and portfolio management. Synchronized across all your devices, secure, and free.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], },
+                    colors: { darkBg: '#0B0E14', cardBg: '#151924', gold: '#F3BA2F', greenUp: '#00C582', redDown: '#FF3358', bluePro: '#2962FF' }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative">
+
+    <!-- Background Glow -->
+    <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-bluePro/10 blur-[150px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gold/5 blur-[150px] pointer-events-none -z-10"></div>
+
+    <!-- NAVBAR & LANGUAGE SWITCHER -->
+    <nav class="fixed w-full z-50 bg-darkBg/80 backdrop-blur-xl border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <img src="ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
+                    <span class="font-bold text-lg lg:text-xl tracking-tight hidden sm:block">YTD <span class="text-gold">Crypto Tracker</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#features" class="text-gray-300 hover:text-white transition font-medium">Features</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-white transition font-medium">Screens</a>
+                    <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">Pro Chart</a>
+                    
+                    <!-- DİL SEÇİCİ (LANGUAGE SWITCHER) -->
+                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-700 text-xs font-bold text-gray-500">
+                        <a href="index.html" class="hover:text-white transition" title="Türkçe">TR</a>
+                        <span class="text-gold">EN</span>
+                        <a href="de.html" class="hover:text-white transition" title="Deutsch">DE</a>
+                        <a href="es.html" class="hover:text-white transition" title="Español">ES</a>
+                        <a href="fr.html" class="hover:text-white transition" title="Français">FR</a>
+                        <!-- İhtiyaca göre diğer diller eklenebilir -->
+                    </div>
+                </div>
+                <div>
+                    <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-0.5 transition duration-300 hover:drop-shadow-[0_0_15px_rgba(243,186,47,0.4)]">
+                        <img src="Google_Play.png" alt="Get it on Google Play" class="h-10 w-auto object-contain">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div class="flex-1 text-center lg:text-left z-10">
+                <div class="inline-flex items-center px-4 py-2 rounded-full border border-gold/30 bg-gold/5 text-gold text-sm font-semibold mb-6 shadow-[0_0_15px_rgba(243,186,47,0.1)]">
+                    <span class="relative flex h-2.5 w-2.5 mr-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold"></span>
+                    </span>
+                    Spot & Futures AI Radar Active
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-black tracking-tighter mb-6 leading-[1.1]">
+                    Don't Just Track Crypto,<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">Understand </span><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">It.</span>
+                </h1>
+                
+                <p class="text-lg lg:text-xl text-gray-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Use premium financial tools completely free. A next-generation AI-supported crypto tracker, live stock charts, and portfolio management terminal designed specifically for investors.
+                </p>
+                
+                <div class="flex flex-col items-center lg:items-start gap-4">
+                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_20px_rgba(243,186,47,0.4)]">
+                            <img src="Google_Play.png" alt="Get it on Google Play" class="h-14 lg:h-16 w-auto object-contain">
+                        </a>
+                        <a href="#features" class="px-8 py-4 rounded-xl font-bold text-lg text-white border border-gray-700 hover:bg-gray-800 transition flex items-center justify-center">
+                            Explore Features
+                        </a>
+                    </div>
+                    
+                    <div class="flex items-center gap-3 text-sm mt-2">
+                        <div class="flex text-gold text-sm drop-shadow-md">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-gray-400 font-medium tracking-wide">Investors' Choice</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
+                <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
+                <!-- ENG GÖRSELLERİ BURADA (eng-02.png) -->
+                <img src="eng-02.png" alt="YTD Spot Buy Report" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-black mb-4 tracking-tight">Rule the Entire Market</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">From cloud synchronization to 4-way Pro Multi-Screen tracking, all the arsenal a professional trader needs.</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
+                <!-- TÜM GÖRSELLER eng PREFİKSİNE ÇEVRİLDİ -->
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="eng-01.png" alt="AI Chart Analysis" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="eng-02.png" alt="Spot Buy Report" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="eng-03.png" alt="Futures Buy Report" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="eng-04.png" alt="Pro Multi-Screen" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="eng-05.png" alt="Smart Alarms" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="eng-06.png" alt="Vault & Portfolio" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="eng-07.png" alt="Cloud Sync" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="eng-08.png" alt="Markets & Trends" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features" class="py-24 bg-darkBg border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-black mb-4 tracking-tight">Innovative & Highlighted Features</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Go beyond ordinary tracking apps. Meet your smart assistant that watches, reads, and listens to the market for you.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-redDown/10 rounded-2xl flex items-center justify-center text-redDown text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(255,51,88,0.1)]">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Night Watchman</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        If there is a sudden crash or panic sale in the market while you sleep, the system wakes up and warns you instantly. Your investments are safe 24/7.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-bluePro/10 rounded-2xl flex items-center justify-center text-bluePro text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(41,98,255,0.1)]">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Voice Assistant & Widget</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Listen to current prices from your headphones while on the go. Or track directly from your home screen with the notification bar and widget without even opening the app.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-greenUp/10 rounded-2xl flex items-center justify-center text-greenUp text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(0,197,130,0.1)]">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">AI Wallet Doctor</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Track real-time Profit/Loss from the vault screen. Artificial intelligence analyzes your asset distribution and provides a detailed portfolio risk report.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI RADAR SECTION -->
+    <section id="ai-radar" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
+            <div class="flex-1">
+                <h2 class="text-3xl lg:text-5xl font-black mb-8 tracking-tight">AI Radar and Pro Chart</h2>
+                <div class="space-y-6">
+                    <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
+                        <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-robot"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Automatic Crypto Signals</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">24/7 pattern detection and Long/Short candidate radar with Rocket (Breakout), Dip Hunter (Oversold), and Hybrid strategies for BTC and Altcoins.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
+                        <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Depth and Whale POC</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Professional charts with VOL, RSI, Bollinger Bands. Read Volume, Whale POC (Point of Control), and Buyer/Seller pressure on a single screen.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
+                        <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-calculator"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">3-Way Cross Calculator</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Calculate your total deduction, gross return, and actual net profit before opening a trade by entering buy, amount, target, and commission rates.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex-1 w-full bg-[#0d1117] rounded-3xl p-8 border border-gray-800 font-mono text-sm text-gray-300 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
+                <div class="absolute top-5 right-6 flex gap-2">
+                    <div class="w-3 h-3 rounded-full bg-redDown"></div>
+                    <div class="w-3 h-3 rounded-full bg-gold"></div>
+                    <div class="w-3 h-3 rounded-full bg-greenUp"></div>
+                </div>
+                <div class="text-gray-500 mb-6 font-bold tracking-widest text-xs uppercase">// AI BREAKOUT RADAR</div>
+                <div class="mb-3"><span class="text-bluePro font-semibold">Algorithm:</span> Rocket (Breakout) Strategy 🚀</div>
+                <div class="mb-3"><span class="text-gold font-semibold">Pattern:</span> Symmetrical Triangle Breakout</div>
+                <div class="mb-6"><span class="text-greenUp font-semibold">Reliability:</span> 88% (Very High)</div>
+                <div class="text-gray-400 leading-relaxed border-l-2 border-gray-700 pl-4">"The system detected that the price broke out of the horizontal consolidation upwards with volume (Whale POC). There is a strong upward movement probability. The position can be evaluated by maintaining your stop-loss level."</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="download" class="bg-black py-16 border-t border-gray-900 relative">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black mb-4">Synchronized and Accessible on All Your Devices</h2>
+            <p class="text-gray-400 mb-8 leading-relaxed text-base">
+                Carry your data with cloud sync or use local backup/restore. Choose any currency, customize font sizes.<br><strong class="text-white mt-2 block">Download YTD now and carry the power of AI in your pocket!</strong>
+            </p>
+            
+            <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_25px_rgba(243,186,47,0.4)] mb-10">
+                <img src="Google_Play.png" alt="Get it on Google Play" class="h-16 lg:h-20 w-auto object-contain">
+            </a>
+            
+            <div class="text-xs text-gray-500 max-w-3xl mx-auto italic mb-8">
+                (Legal Disclaimer: The analyses and data in this application are produced by artificial intelligence algorithms and definitely do not constitute investment advice. Cryptocurrency investments involve high risk.)
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-sm text-gray-600 border-t border-gray-900 pt-8">
+                <a href="https://docs.google.com/document/d/1se12jpj3VZfuHtXRXwn6x3jt23NGt8h0-v9zR--hKxM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition">Privacy Policy</a>
+                <span>&copy; 2026 YTD Crypto Tracker & AI Radar. All Rights Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VanillaTilt Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    
+    <script>
+        if (window.innerWidth > 768) {
+            VanillaTilt.init(document.querySelector(".tilt-image"), {
+                max: 12,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.15
+            });
+        }
+    </script>
+</body>
+</html>
