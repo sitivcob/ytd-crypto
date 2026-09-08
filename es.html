@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- İSPANYOLCA UYGULAMA İSMİ -->
+    <title>YTD Radar Cripto & Análisis IA</title>
+    <meta name="description" content="Radar cripto impulsado por IA, análisis de gráficos avanzado y gestión de cartera. Sincronizado en todos tus dispositivos, seguro y gratis.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (İkonlar) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Uygulamamıza Özel Renk Paleti -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#0B0E14',
+                        cardBg: '#151924',
+                        gold: '#F3BA2F',
+                        greenUp: '#00C582',
+                        redDown: '#FF3358',
+                        bluePro: '#2962FF'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative">
+
+    <!-- ARKA PLAN GÖRSEL ZENGİNLİĞİ -->
+    <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-bluePro/10 blur-[150px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gold/5 blur-[150px] pointer-events-none -z-10"></div>
+
+    <!-- ÜST MENÜ (NAVBAR) -->
+    <nav class="fixed w-full z-50 bg-darkBg/80 backdrop-blur-xl border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center gap-3">
+                    <img src="ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
+                    <span class="font-bold text-lg lg:text-xl tracking-tight hidden sm:block">YTD <span class="text-gold">Radar Cripto</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#features" class="text-gray-300 hover:text-white transition font-medium">Características</a>
+                    <a href="#gallery" class="text-gray-300 hover:text-white transition font-medium">Pantallas</a>
+                    <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">Gráfico Pro</a>
+                    
+                    <!-- DİL SEÇİCİ (İSPANYOLCA AKTİF) -->
+                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-700 text-xs font-bold text-gray-500">
+                        <a href="index.html" class="hover:text-white transition" title="Türkçe">TR</a>
+                        <a href="eng.html" class="hover:text-white transition" title="English">EN</a>
+                        <a href="de.html" class="hover:text-white transition" title="Deutsch">DE</a>
+                        <span class="text-gold">ES</span>
+                        <a href="fr.html" class="hover:text-white transition" title="Français">FR</a>
+                    </div>
+                </div>
+                <div>
+                    <!-- Resmi Rozet -->
+                    <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-0.5 transition duration-300 hover:drop-shadow-[0_0_15px_rgba(243,186,47,0.4)]">
+                        <img src="Google_Play.png" alt="Disponible en Google Play" class="h-10 w-auto object-contain">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- KAHRAMAN BÖLÜMÜ (HERO) -->
+    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <!-- Sol Metin Alanı -->
+            <div class="flex-1 text-center lg:text-left z-10">
+                <div class="inline-flex items-center px-4 py-2 rounded-full border border-gold/30 bg-gold/5 text-gold text-sm font-semibold mb-6 shadow-[0_0_15px_rgba(243,186,47,0.1)]">
+                    <span class="relative flex h-2.5 w-2.5 mr-2.5">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-gold"></span>
+                    </span>
+                    Radar IA Spot y Futuros Activo
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-black tracking-tighter mb-6 leading-[1.1]">
+                    No solo sigas las criptos,<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400">Entiéndelas</span><span class="text-transparent bg-clip-text bg-gradient-to-r from-gold to-yellow-200">.</span>
+                </h1>
+                
+                <p class="text-lg lg:text-xl text-gray-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                    Utilice herramientas financieras premium de forma totalmente gratuita. Un rastreador de criptomonedas con inteligencia artificial de nueva generación, gráficos en vivo y terminal de gestión de cartera diseñado para inversores.
+                </p>
+                
+                <div class="flex flex-col items-center lg:items-start gap-4">
+                    <div class="flex flex-col sm:flex-row items-center gap-4">
+                        <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_20px_rgba(243,186,47,0.4)]">
+                            <img src="Google_Play.png" alt="Disponible en Google Play" class="h-14 lg:h-16 w-auto object-contain">
+                        </a>
+                        <a href="#features" class="px-8 py-4 rounded-xl font-bold text-lg text-white border border-gray-700 hover:bg-gray-800 transition flex items-center justify-center">
+                            Descubre las Funciones
+                        </a>
+                    </div>
+                    
+                    <!-- SOSYAL KANIT (5 Yıldız) -->
+                    <div class="flex items-center gap-3 text-sm mt-2">
+                        <div class="flex text-gold text-sm drop-shadow-md">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <span class="text-gray-400 font-medium tracking-wide">La Elección de los Inversores</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sağ Görsel Alanı -->
+            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
+                <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
+                <!-- İSPANYOLCA GÖRSEL (es-02.png) -->
+                <img src="es-02.png" alt="YTD Informe de Compra Spot" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERİ BÖLÜMÜ -->
+    <section id="gallery" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-black mb-4 tracking-tight">Domina Todo el Mercado</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Desde la sincronización en la nube hasta el seguimiento Pro Multi-Pantalla de 4 vistas, todo el arsenal que un trader profesional necesita.</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
+                <!-- TÜM GÖRSELLER es PREFİKSİNE ÇEVRİLDİ -->
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="es-01.png" alt="Análisis Gráfico IA" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="es-02.png" alt="Informe de Compra Spot" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="es-03.png" alt="Informe de Compra Futuros" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="es-04.png" alt="Multi-Pantalla Pro" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="es-05.png" alt="Alarmas Inteligentes" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="es-06.png" alt="Bóveda y Cartera" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="es-07.png" alt="Sincronización en la Nube" class="w-full h-auto">
+                </div>
+                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
+                    <img src="es-08.png" alt="Mercados y Tendencias" class="w-full h-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÖZELLİKLER BÖLÜMÜ -->
+    <section id="features" class="py-24 bg-darkBg border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-5xl font-black mb-4 tracking-tight">Funciones Innovadoras y Destacadas</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Vaya más allá de las aplicaciones de seguimiento comunes. Conozca a su asistente inteligente que observa, lee y escucha el mercado por usted.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-redDown/10 rounded-2xl flex items-center justify-center text-redDown text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(255,51,88,0.1)]">
+                        <i class="fa-solid fa-bell-slash"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Vigilante Nocturno</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Si hay una caída repentina o venta de pánico mientras duerme, el sistema se despierta y le advierte al instante. Sus inversiones están seguras 24/7.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-bluePro/10 rounded-2xl flex items-center justify-center text-bluePro text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(41,98,255,0.1)]">
+                        <i class="fa-solid fa-headphones"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Asistente de Voz y Widget</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Escuche los precios actuales desde sus auriculares mientras viaja. O siga directamente desde la barra de notificaciones y el widget sin abrir la aplicación.
+                    </p>
+                </div>
+                <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-greenUp/10 rounded-2xl flex items-center justify-center text-greenUp text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(0,197,130,0.1)]">
+                        <i class="fa-solid fa-user-doctor"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Doctor de Cartera IA</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Realice un seguimiento de las Ganancias/Pérdidas en tiempo real desde la pantalla de la bóveda. La inteligencia artificial analiza la distribución de sus activos y proporciona un informe detallado del riesgo de la cartera.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TEKNİK İNDİKATÖRLER BÖLÜMÜ -->
+    <section id="ai-radar" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
+            <div class="flex-1">
+                <h2 class="text-3xl lg:text-5xl font-black mb-8 tracking-tight">Radar IA y Gráfico Pro</h2>
+                <div class="space-y-6">
+                    <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
+                        <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-robot"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Señales Cripto Automáticas</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Detección de patrones 24/7 y radar de candidatos Long/Short con estrategias Cohete (Ruptura), Cazador de Caídas (Sobrevendido) e Híbrido para BTC y Altcoins.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
+                        <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Profundidad y Ballena POC</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Gráficos profesionales con VOL, RSI, Bandas de Bollinger. Lea el volumen, la Ballena POC (Punto de Control) y la presión de Comprador/Vendedor en una sola pantalla.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
+                        <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-calculator"></i></div>
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Calculadora Cruzada de 3 Vías</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Calcule su deducción total, rendimiento bruto y beneficio neto real antes de abrir una operación ingresando la compra, cantidad, objetivo y comisiones.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex-1 w-full bg-[#0d1117] rounded-3xl p-8 border border-gray-800 font-mono text-sm text-gray-300 shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative">
+                <div class="absolute top-5 right-6 flex gap-2">
+                    <div class="w-3 h-3 rounded-full bg-redDown"></div>
+                    <div class="w-3 h-3 rounded-full bg-gold"></div>
+                    <div class="w-3 h-3 rounded-full bg-greenUp"></div>
+                </div>
+                <div class="text-gray-500 mb-6 font-bold tracking-widest text-xs uppercase">// RADAR DE RUPTURA IA</div>
+                <div class="mb-3"><span class="text-bluePro font-semibold">Algoritmo:</span> Estrategia Cohete 🚀</div>
+                <div class="mb-3"><span class="text-gold font-semibold">Patrón:</span> Ruptura de Triángulo Simétrico</div>
+                <div class="mb-6"><span class="text-greenUp font-semibold">Confiabilidad:</span> 88% (Muy Alta)</div>
+                <div class="text-gray-400 leading-relaxed border-l-2 border-gray-700 pl-4">"El sistema detectó que el precio rompió la consolidación horizontal hacia arriba con volumen (Ballena POC). Existe una fuerte probabilidad de movimiento alcista. La posición se puede evaluar manteniendo el stop-loss."</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="download" class="bg-black py-16 border-t border-gray-900 relative">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black mb-4">Sincronizado y Accesible en Todos Sus Dispositivos</h2>
+            <p class="text-gray-400 mb-8 leading-relaxed text-base">
+                Lleve sus datos con sincronización en la nube o use copia de seguridad/restauración local. Elija cualquier moneda, personalice el tamaño de fuente.<br><strong class="text-white mt-2 block">¡Descargue YTD ahora y lleve el poder de la IA en su bolsillo!</strong>
+            </p>
+            
+            <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_25px_rgba(243,186,47,0.4)] mb-10">
+                <img src="Google_Play.png" alt="Disponible en Google Play" class="h-16 lg:h-20 w-auto object-contain">
+            </a>
+            
+            <div class="text-xs text-gray-500 max-w-3xl mx-auto italic mb-8">
+                (Aviso legal: Los análisis y datos en esta aplicación son producidos por algoritmos de inteligencia artificial y de ninguna manera constituyen asesoramiento de inversión (YTD). Las inversiones en criptomonedas implican un alto riesgo.)
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-sm text-gray-600 border-t border-gray-900 pt-8">
+                <a href="https://docs.google.com/document/d/1se12jpj3VZfuHtXRXwn6x3jt23NGt8h0-v9zR--hKxM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition">Política de Privacidad</a>
+                <span>&copy; 2026 YTD Radar Cripto & Análisis IA. Todos los derechos reservados.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VanillaTilt Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    
+    <script>
+        if (window.innerWidth > 768) {
+            VanillaTilt.init(document.querySelector(".tilt-image"), {
+                max: 12,
+                speed: 400,
+                glare: true,
+                "max-glare": 0.15
+            });
+        }
+    </script>
+</body>
+</html>
