@@ -15,6 +15,9 @@
     <!-- FontAwesome (İkonlar) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Bayrak İkonları Kütüphanesi -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
+
     <!-- Uygulamamıza Özel Renk Paleti -->
     <script>
         tailwind.config = {
@@ -55,17 +58,17 @@
                     <a href="#galeri" class="text-gray-300 hover:text-white transition font-medium">Ekranlar</a>
                     <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">Pro Grafik</a>
                     
-                    <!-- DİL SEÇİCİ (TÜRKÇE AKTİF) -->
-                    <div class="flex items-center gap-2 ml-4 pl-4 border-l border-gray-700 text-xs font-bold text-gray-500">
-                        <span class="text-gold">TR</span>
-                        <a href="eng.html" class="hover:text-white transition" title="English">EN</a>
-                        <a href="de.html" class="hover:text-white transition" title="Deutsch">DE</a>
-                        <a href="fr.html" class="hover:text-white transition" title="Français">FR</a>
-                        <a href="es.html" class="hover:text-white transition" title="Español">ES</a>
-                        <a href="ja.html" class="hover:text-white transition" title="日本語">JA</a>
-                        <a href="ko.html" class="hover:text-white transition" title="한국어">KO</a>
-                        <a href="pt.html" class="hover:text-white transition" title="Português">PT</a>
-                        <a href="ru.html" class="hover:text-white transition" title="Русский">RU</a>
+                    <!-- DİL SEÇİCİ (TÜRKÇE AKTİF - BAYRAKLI) -->
+                    <div class="flex items-center gap-3 ml-4 pl-4 border-l border-gray-700 text-xl">
+                        <a href="index.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="English"><span class="fi fi-gb rounded-sm"></span></a>
+                        <a href="tr.html" class="scale-110 drop-shadow-[0_0_8px_rgba(243,186,47,0.8)]" title="Türkçe"><span class="fi fi-tr rounded-sm"></span></a>
+                        <a href="de.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Deutsch"><span class="fi fi-de rounded-sm"></span></a>
+                        <a href="fr.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Français"><span class="fi fi-fr rounded-sm"></span></a>
+                        <a href="es.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Español"><span class="fi fi-es rounded-sm"></span></a>
+                        <a href="ja.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="日本語"><span class="fi fi-jp rounded-sm"></span></a>
+                        <a href="ko.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="한국어"><span class="fi fi-kr rounded-sm"></span></a>
+                        <a href="pt.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Português"><span class="fi fi-pt rounded-sm"></span></a>
+                        <a href="ru.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Русский"><span class="fi fi-ru rounded-sm"></span></a>
                     </div>
                 </div>
                 <div>
@@ -81,7 +84,6 @@
     <!-- KAHRAMAN BÖLÜMÜ (HERO) -->
     <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 overflow-hidden relative">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-            <!-- Sol Metin Alanı -->
             <div class="flex-1 text-center lg:text-left z-10">
                 <div class="inline-flex items-center px-4 py-2 rounded-full border border-gold/30 bg-gold/5 text-gold text-sm font-semibold mb-6 shadow-[0_0_15px_rgba(243,186,47,0.1)]">
                     <span class="relative flex h-2.5 w-2.5 mr-2.5">
@@ -110,7 +112,6 @@
                         </a>
                     </div>
                     
-                    <!-- SOSYAL KANIT (5 Yıldız) -->
                     <div class="flex items-center gap-3 text-sm mt-2">
                         <div class="flex text-gold text-sm drop-shadow-md">
                             <i class="fa-solid fa-star"></i>
@@ -124,7 +125,6 @@
                 </div>
             </div>
             
-            <!-- Sağ Görsel Alanı -->
             <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
                 <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
                 <img src="tr-02.png" alt="YTD Spot Al Raporu" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
@@ -264,7 +264,6 @@
                 Bulut senkronizasyonu ile verilerinizi taşıyın veya yerel yedekleme/geri yükleme kullanın. Dilediğiniz para birimini seçin, yazı boyutlarını özelleştirin.<br><strong class="text-white mt-2 block">YTD'yi hemen indirin ve yapay zekanın gücünü cebinize taşıyın!</strong>
             </p>
             
-            <!-- Resmi Google Play Rozeti (Kırpılma Sorunu Çözüldü, Saf Görünüm) -->
             <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_25px_rgba(243,186,47,0.4)] mb-10">
                 <img src="Google_Play.png" alt="Google Play'den İndir" class="h-16 lg:h-20 w-auto object-contain">
             </a>
