@@ -6,56 +6,111 @@
     <title>YTD Tracker Crypto & Radar IA</title>
     <meta name="description" content="Radar crypto alimenté par l'IA, analyse graphique avancée et gestion de portefeuille. Synchronisé sur tous vos appareils, sécurisé et gratuit.">
     
+    <!-- Open Graph (WhatsApp, Facebook vb. Sosyal Medya Önizlemeleri) -->
+    <meta property="og:title" content="YTD Tracker Crypto & Radar IA" />
+    <meta property="og:description" content="Radar crypto alimenté par l'IA, analyse graphique avancée et gestion de portefeuille. Synchronisé sur tous vos appareils, sécurisé et gratuit." />
+    <meta property="og:image" content="https://sitivcob.github.io/ytd-crypto/assets/img/ytd-logo.png" />
+    <meta property="og:url" content="https://sitivcob.github.io/ytd-crypto/fr.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Paylaşım Önizlemeleri -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="YTD Tracker Crypto & Radar IA" />
+    <meta name="twitter:description" content="Radar crypto alimenté par l'IA, analyse graphique avancée et gestion de portefeuille." />
+    <meta name="twitter:image" content="https://sitivcob.github.io/ytd-crypto/assets/img/fr-02.png" />
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome (İkonlar) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Bayrak İkonları Kütüphanesi -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
 
+    <!-- Uygulamamıza Özel Renk Paleti -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'], },
-                    colors: { darkBg: '#0B0E14', cardBg: '#151924', gold: '#F3BA2F', greenUp: '#00C582', redDown: '#FF3358', bluePro: '#2962FF' }
+                    colors: { darkBg: '#0B0E14', cardBg: '#151924', gold: '#F3BA2F', greenUp: '#00C582', redDown: '#FF3358', bluePro: '#2962FF' },
+                    animation: { 'float': 'float 6s ease-in-out infinite' },
+                    keyframes: { float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-15px)' } } }
                 }
             }
         }
     </script>
-</head>
-<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative">
 
+    <style>
+        .tooltip-text { visibility: hidden; opacity: 0; transition: all 0.3s ease; transform: translateY(10px); }
+        .group:hover .tooltip-text { visibility: visible; opacity: 1; transform: translateY(0); }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative overflow-x-hidden">
+
+    <!-- ARKA PLAN GÖRSEL ZENGİNLİĞİ -->
     <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-bluePro/10 blur-[150px] pointer-events-none -z-10"></div>
     <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gold/5 blur-[150px] pointer-events-none -z-10"></div>
 
+    <!-- ÜST MENÜ (NAVBAR) -->
     <nav class="fixed w-full z-50 bg-darkBg/90 backdrop-blur-xl border-b border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <img src="ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
+                <div class="flex items-center gap-3 hover:scale-105 transition-transform duration-300">
+                    <img src="assets/img/ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
                     <span class="font-bold text-lg lg:text-xl tracking-tight hidden sm:block">YTD <span class="text-gold">Tracker Crypto</span></span>
                 </div>
                 
+                <!-- Masaüstü Menü -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#features" class="text-gray-300 hover:text-white transition font-medium">Fonctionnalités</a>
                     <a href="#gallery" class="text-gray-300 hover:text-white transition font-medium">Écrans</a>
                     <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">Graphiques Pro</a>
                     
-                    <div class="flex items-center gap-3 ml-4 pl-4 border-l border-gray-700 text-xl">
-                        <a href="index.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="English"><span class="fi fi-gb rounded-sm"></span></a>
-                        <a href="tr.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Türkçe"><span class="fi fi-tr rounded-sm"></span></a>
-                        <a href="de.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Deutsch"><span class="fi fi-de rounded-sm"></span></a>
-                        <a href="fr.html" class="scale-110 drop-shadow-[0_0_8px_rgba(243,186,47,0.8)]" title="Français"><span class="fi fi-fr rounded-sm"></span></a>
-                        <a href="es.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Español"><span class="fi fi-es rounded-sm"></span></a>
-                        <a href="ja.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="日本語"><span class="fi fi-jp rounded-sm"></span></a>
-                        <a href="ko.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="한국어"><span class="fi fi-kr rounded-sm"></span></a>
-                        <a href="pt.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Português"><span class="fi fi-pt rounded-sm"></span></a>
-                        <a href="ru.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Русский"><span class="fi fi-ru rounded-sm"></span></a>
+                    <!-- DİL MENÜSÜ -->
+                    <div class="flex items-center gap-2 ml-4 pl-6 border-l border-gray-800 text-xl bg-cardBg/50 px-4 py-2 rounded-full shadow-inner">
+                        <a href="index.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-gb rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">English</span>
+                        </a>
+                        <a href="tr.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-tr rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Türkçe</span>
+                        </a>
+                        <a href="de.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-de rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Deutsch</span>
+                        </a>
+                        <div class="group relative flex flex-col items-center cursor-pointer">
+                            <span class="fi fi-fr rounded-sm shadow-[0_0_10px_rgba(243,186,47,0.8)] border border-gold scale-110"></span>
+                            <span class="tooltip-text absolute top-10 bg-darkBg border border-gold/50 text-gold text-xs font-bold px-3 py-1.5 rounded-lg shadow-xl whitespace-nowrap z-50">Français</span>
+                        </div>
+                        <div class="w-px h-5 bg-gray-700 mx-1"></div>
+                        <a href="es.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-es rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Español</span>
+                        </a>
+                        <a href="ja.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-jp rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">日本語</span>
+                        </a>
+                        <a href="ko.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-kr rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">한국어</span>
+                        </a>
+                        <a href="pt.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-pt rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Português</span>
+                        </a>
+                        <a href="ru.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-ru rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Русский</span>
+                        </a>
                     </div>
                 </div>
 
+                <!-- Sağ Taraf (Mobil Buton + Google Play) -->
                 <div class="flex items-center gap-3 sm:gap-4">
                     <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-0.5 transition duration-300 hover:drop-shadow-[0_0_15px_rgba(243,186,47,0.4)]">
-                        <img src="Google_Play.png" alt="Disponible sur Google Play" class="h-9 sm:h-10 w-auto object-contain">
+                        <img src="assets/img/Google_Play.png" alt="Disponible sur Google Play" class="h-9 sm:h-10 w-auto object-contain">
                     </a>
                     <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none ml-2">
                         <i class="fa-solid fa-bars text-2xl"></i>
@@ -64,6 +119,7 @@
             </div>
         </div>
 
+        <!-- Mobil Açılır Menü -->
         <div id="mobile-menu" class="hidden md:hidden bg-darkBg/95 backdrop-blur-xl border-b border-gray-800 shadow-2xl absolute w-full left-0 top-20 transition-all duration-300">
             <div class="px-4 pt-4 pb-6 flex flex-col space-y-4 text-center">
                 <a href="#features" class="text-gray-300 hover:text-white font-medium text-lg block py-2">Fonctionnalités</a>
@@ -74,7 +130,7 @@
                     <a href="index.html" class="opacity-60"><span class="fi fi-gb rounded-sm"></span></a>
                     <a href="tr.html" class="opacity-60"><span class="fi fi-tr rounded-sm"></span></a>
                     <a href="de.html" class="opacity-60"><span class="fi fi-de rounded-sm"></span></a>
-                    <a href="fr.html" class="drop-shadow-[0_0_8px_rgba(243,186,47,0.8)]"><span class="fi fi-fr rounded-sm"></span></a>
+                    <span class="fi fi-fr rounded-sm drop-shadow-[0_0_8px_rgba(243,186,47,0.8)] border border-gold"></span>
                     <a href="es.html" class="opacity-60"><span class="fi fi-es rounded-sm"></span></a>
                     <a href="ja.html" class="opacity-60"><span class="fi fi-jp rounded-sm"></span></a>
                     <a href="ko.html" class="opacity-60"><span class="fi fi-kr rounded-sm"></span></a>
@@ -85,6 +141,7 @@
         </div>
     </nav>
 
+    <!-- KAHRAMAN BÖLÜMÜ (HERO) -->
     <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 overflow-hidden relative">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div class="flex-1 text-center lg:text-left z-10">
@@ -108,7 +165,7 @@
                 <div class="flex flex-col items-center lg:items-start gap-4">
                     <div class="flex flex-col sm:flex-row items-center gap-4">
                         <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_20px_rgba(243,186,47,0.4)]">
-                            <img src="Google_Play.png" alt="Disponible sur Google Play" class="h-14 lg:h-16 w-auto object-contain">
+                            <img src="assets/img/Google_Play.png" alt="Disponible sur Google Play" class="h-14 lg:h-16 w-auto object-contain">
                         </a>
                         <a href="#features" class="px-8 py-4 rounded-xl font-bold text-lg text-white border border-gray-700 hover:bg-gray-800 transition flex items-center justify-center">
                             Découvrir les Fonctionnalités
@@ -124,13 +181,15 @@
                 </div>
             </div>
             
-            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
+            <!-- HİÇBİR CSS KUTUSU YOK! TERTEMİZ PNG VE SÜZÜLME EFEKTİ -->
+            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center animate-float z-20">
                 <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
-                <img src="fr-02.png" alt="YTD Rapport d'Achat Spot" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
+                <img src="assets/img/fr-02.png" alt="YTD Rapport d'Achat Spot" class="relative z-10 w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]">
             </div>
         </div>
     </section>
 
+    <!-- GALERİ (HİÇBİR ÇERÇEVE, KUTU VE ARKA PLAN YOK - SADECE SAF PNG VE GÖLGE) -->
     <section id="gallery" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -138,35 +197,54 @@
                 <p class="text-gray-400 max-w-2xl mx-auto text-lg">De la synchronisation cloud au suivi multi-écrans Pro à 4 vues, tout l'arsenal dont un trader professionnel a besoin.</p>
             </div>
             
-            <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="fr-01.png" alt="Analyse Graphique IA" class="w-full h-auto">
+            <!-- TERTEMİZ YATAY KAYDIRILABİLİR PNG GALERİSİ -->
+            <div class="flex overflow-x-auto gap-4 pb-10 hide-scroll snap-x snap-mandatory lg:grid lg:grid-cols-4 lg:gap-8 lg:overflow-visible">
+                
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/fr-01.png" alt="Analyse Graphique IA" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Analyse Graphique IA</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="fr-02.png" alt="Rapport d'Achat Spot" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/fr-02.png" alt="Rapport d'Achat Spot" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Rapport d'Achat Spot</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="fr-03.png" alt="Rapport d'Achat Futures" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/fr-03.png" alt="Rapport d'Achat Futures" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Rapport d'Achat Futures</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="fr-04.png" alt="Multi-Écrans Pro" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/fr-04.png" alt="Multi-Écrans Pro" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Multi-Écrans Pro</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="fr-05.png" alt="Alarmes Intelligentes" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/fr-05.png" alt="Alarmes Intelligentes" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Alarmes Intelligentes</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="fr-06.png" alt="Coffre et Portefeuille" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/fr-06.png" alt="Coffre et Portefeuille" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Coffre et Portefeuille</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="fr-07.png" alt="Synchronisation Cloud" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/fr-07.png" alt="Synchronisation Cloud" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Synchronisation Cloud</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="fr-08.png" alt="Marchés et Tendances" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/fr-08.png" alt="Marchés et Tendances" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Marchés et Tendances</h4>
                 </div>
+
             </div>
         </div>
     </section>
 
+    <!-- ÖZELLİKLER BÖLÜMÜ -->
     <section id="features" class="py-24 bg-darkBg border-t border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -206,6 +284,7 @@
         </div>
     </section>
 
+    <!-- TEKNİK İNDİKATÖRLER BÖLÜMÜ -->
     <section id="ai-radar" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-16">
             <div class="flex-1">
@@ -252,6 +331,7 @@
         </div>
     </section>
 
+    <!-- FOOTER & İNDİRME -->
     <footer id="download" class="bg-black py-16 border-t border-gray-900 relative">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-black mb-4">Synchronisé et Accessible sur Tous Vos Appareils</h2>
@@ -260,7 +340,7 @@
             </p>
             
             <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_25px_rgba(243,186,47,0.4)] mb-10">
-                <img src="Google_Play.png" alt="Disponible sur Google Play" class="h-16 lg:h-20 w-auto object-contain">
+                <img src="assets/img/Google_Play.png" alt="Disponible sur Google Play" class="h-16 lg:h-20 w-auto object-contain">
             </a>
             
             <div class="text-xs text-gray-500 max-w-3xl mx-auto italic mb-8">
@@ -274,15 +354,13 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script>
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
-        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
 
-        if (window.innerWidth > 768) {
-            VanillaTilt.init(document.querySelector(".tilt-image"), { max: 12, speed: 400, glare: true, "max-glare": 0.15 });
-        }
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
     </script>
 </body>
 </html>
