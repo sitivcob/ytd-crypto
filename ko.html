@@ -6,6 +6,18 @@
     <title>YTD 암호화폐 트래커 & AI 분석</title>
     <meta name="description" content="AI 기반 암호화폐 레이더, 고급 차트 분석 및 포트폴리오 관리. 모든 기기에서 동기화되며 안전하고 무료입니다.">
     
+    <!-- Open Graph -->
+    <meta property="og:title" content="YTD 암호화폐 트래커 & AI 분석" />
+    <meta property="og:description" content="AI 기반 암호화폐 레이더, 고급 차트 분석 및 포트폴리오 관리. 모든 기기에서 동기화되며 안전하고 무료입니다." />
+    <meta property="og:image" content="https://sitivcob.github.io/ytd-crypto/assets/img/ytd-logo.png" />
+    <meta property="og:url" content="https://sitivcob.github.io/ytd-crypto/ko.html" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="YTD 암호화폐 트래커 & AI 분석" />
+    <meta name="twitter:description" content="AI 기반 암호화폐 레이더, 고급 차트 분석 및 포트폴리오 관리." />
+    <meta name="twitter:image" content="https://sitivcob.github.io/ytd-crypto/assets/img/ko-02.png" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,13 +28,22 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['"Noto Sans KR"', 'Inter', 'sans-serif'], },
-                    colors: { darkBg: '#0B0E14', cardBg: '#151924', gold: '#F3BA2F', greenUp: '#00C582', redDown: '#FF3358', bluePro: '#2962FF' }
+                    colors: { darkBg: '#0B0E14', cardBg: '#151924', gold: '#F3BA2F', greenUp: '#00C582', redDown: '#FF3358', bluePro: '#2962FF' },
+                    animation: { 'float': 'float 6s ease-in-out infinite' },
+                    keyframes: { float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-15px)' } } }
                 }
             }
         }
     </script>
+
+    <style>
+        .tooltip-text { visibility: hidden; opacity: 0; transition: all 0.3s ease; transform: translateY(10px); }
+        .group:hover .tooltip-text { visibility: visible; opacity: 1; transform: translateY(0); }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
-<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative">
+<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative overflow-x-hidden">
 
     <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-bluePro/10 blur-[150px] pointer-events-none -z-10"></div>
     <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gold/5 blur-[150px] pointer-events-none -z-10"></div>
@@ -30,8 +51,8 @@
     <nav class="fixed w-full z-50 bg-darkBg/90 backdrop-blur-xl border-b border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <img src="ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
+                <div class="flex items-center gap-3 hover:scale-105 transition-transform duration-300">
+                    <img src="assets/img/ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
                     <span class="font-bold text-lg lg:text-xl tracking-tight hidden sm:block">YTD <span class="text-gold">암호화폐 트래커</span></span>
                 </div>
                 
@@ -40,23 +61,42 @@
                     <a href="#gallery" class="text-gray-300 hover:text-white transition font-medium">화면</a>
                     <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">프로 차트</a>
                     
-                    <!-- Masaüstü Dil Seçici -->
-                    <div class="flex items-center gap-3 ml-4 pl-4 border-l border-gray-700 text-xl">
-                        <a href="index.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="English"><span class="fi fi-gb rounded-sm"></span></a>
-                        <a href="tr.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Türkçe"><span class="fi fi-tr rounded-sm"></span></a>
-                        <a href="de.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Deutsch"><span class="fi fi-de rounded-sm"></span></a>
-                        <a href="fr.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Français"><span class="fi fi-fr rounded-sm"></span></a>
-                        <a href="es.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Español"><span class="fi fi-es rounded-sm"></span></a>
-                        <a href="ja.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="日本語"><span class="fi fi-jp rounded-sm"></span></a>
-                        <a href="ko.html" class="scale-110 drop-shadow-[0_0_8px_rgba(243,186,47,0.8)]" title="한국어"><span class="fi fi-kr rounded-sm"></span></a>
-                        <a href="pt.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Português"><span class="fi fi-pt rounded-sm"></span></a>
-                        <a href="ru.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Русский"><span class="fi fi-ru rounded-sm"></span></a>
+                    <div class="flex items-center gap-2 ml-4 pl-6 border-l border-gray-800 text-xl bg-cardBg/50 px-4 py-2 rounded-full shadow-inner">
+                        <a href="index.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-gb rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">English</span>
+                        </a>
+                        <a href="tr.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-tr rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Türkçe</span>
+                        </a>
+                        <a href="de.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-de rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Deutsch</span>
+                        </a>
+                        <a href="fr.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-fr rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Français</span>
+                        </a>
+                        <a href="es.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-es rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Español</span>
+                        </a>
+                        <a href="ja.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-jp rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">日本語</span>
+                        </a>
+                        <div class="group relative flex flex-col items-center cursor-pointer">
+                            <span class="fi fi-kr rounded-sm shadow-[0_0_10px_rgba(243,186,47,0.8)] border border-gold scale-110"></span>
+                            <span class="tooltip-text absolute top-10 bg-darkBg border border-gold/50 text-gold text-xs font-bold px-3 py-1.5 rounded-lg shadow-xl whitespace-nowrap z-50">한국어</span>
+                        </div>
+                        <div class="w-px h-5 bg-gray-700 mx-1"></div>
+                        <a href="pt.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-pt rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Português</span>
+                        </a>
+                        <a href="ru.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-ru rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Русский</span>
+                        </a>
                     </div>
                 </div>
 
                 <div class="flex items-center gap-3 sm:gap-4">
                     <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-0.5 transition duration-300 hover:drop-shadow-[0_0_15px_rgba(243,186,47,0.4)]">
-                        <img src="Google_Play.png" alt="Google Play에서 다운로드" class="h-9 sm:h-10 w-auto object-contain">
+                        <img src="assets/img/Google_Play.png" alt="Google Play에서 다운로드" class="h-9 sm:h-10 w-auto object-contain">
                     </a>
                     <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none ml-2">
                         <i class="fa-solid fa-bars text-2xl"></i>
@@ -65,7 +105,6 @@
             </div>
         </div>
 
-        <!-- Mobil Açılır Menü -->
         <div id="mobile-menu" class="hidden md:hidden bg-darkBg/95 backdrop-blur-xl border-b border-gray-800 shadow-2xl absolute w-full left-0 top-20 transition-all duration-300">
             <div class="px-4 pt-4 pb-6 flex flex-col space-y-4 text-center">
                 <a href="#features" class="text-gray-300 hover:text-white font-medium text-lg block py-2">기능</a>
@@ -79,7 +118,7 @@
                     <a href="fr.html" class="opacity-60"><span class="fi fi-fr rounded-sm"></span></a>
                     <a href="es.html" class="opacity-60"><span class="fi fi-es rounded-sm"></span></a>
                     <a href="ja.html" class="opacity-60"><span class="fi fi-jp rounded-sm"></span></a>
-                    <a href="ko.html" class="drop-shadow-[0_0_8px_rgba(243,186,47,0.8)]"><span class="fi fi-kr rounded-sm"></span></a>
+                    <span class="fi fi-kr rounded-sm drop-shadow-[0_0_8px_rgba(243,186,47,0.8)] border border-gold"></span>
                     <a href="pt.html" class="opacity-60"><span class="fi fi-pt rounded-sm"></span></a>
                     <a href="ru.html" class="opacity-60"><span class="fi fi-ru rounded-sm"></span></a>
                 </div>
@@ -104,13 +143,13 @@
                 </h1>
                 
                 <p class="text-lg lg:text-xl text-gray-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                    보통 높은 구독료가 필요한 프리미엄 금융 도구를 완전 무료로 사용하세요. 투자자를 위해 특별히 설계된 차세대 AI 지원 암호화폐 트래커, 실시간 거래소 차트 및 포트폴리오 관리 단말기입니다.
+                    보통 높은 구독료가 필요한 프리미엄 금융 도구를 완전 무료로 사용하세요. 투자자를 위해 특별히 설계된 차세대 AI 지원 암호화폐 트래커, 실시간 거래소 차트 및 포트폴리오 관리 단말기.
                 </p>
                 
                 <div class="flex flex-col items-center lg:items-start gap-4">
                     <div class="flex flex-col sm:flex-row items-center gap-4">
                         <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_20px_rgba(243,186,47,0.4)]">
-                            <img src="Google_Play.png" alt="Google Play에서 다운로드" class="h-14 lg:h-16 w-auto object-contain">
+                            <img src="assets/img/Google_Play.png" alt="Google Play에서 다운로드" class="h-14 lg:h-16 w-auto object-contain">
                         </a>
                         <a href="#features" class="px-8 py-4 rounded-xl font-bold text-lg text-white border border-gray-700 hover:bg-gray-800 transition flex items-center justify-center">
                             기능 살펴보기
@@ -126,9 +165,9 @@
                 </div>
             </div>
             
-            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
+            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center animate-float z-20">
                 <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
-                <img src="ko-02.png" alt="YTD 현물 매수 보고서" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
+                <img src="assets/img/ko-02.png" alt="현물 매수 보고서" class="relative z-10 w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]">
             </div>
         </div>
     </section>
@@ -140,30 +179,38 @@
                 <p class="text-gray-400 max-w-2xl mx-auto text-lg">클라우드 동기화부터 4분할 프로 멀티스크린 추적까지, 전문 트레이더에게 필요한 모든 도구를 제공합니다.</p>
             </div>
             
-            <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ko-01.png" alt="AI 차트 분석" class="w-full h-auto">
+            <div class="flex overflow-x-auto gap-4 pb-10 hide-scroll snap-x snap-mandatory lg:grid lg:grid-cols-4 lg:gap-8 lg:overflow-visible">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ko-01.png" alt="AI 차트 분석" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">AI 차트 분석</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ko-02.png" alt="현물 매수 보고서" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ko-02.png" alt="현물 매수 보고서" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">현물 매수 보고서</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ko-03.png" alt="선물 매수 보고서" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ko-03.png" alt="선물 매수 보고서" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">선물 매수 보고서</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ko-04.png" alt="프로 멀티스크린" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ko-04.png" alt="프로 멀티스크린" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">프로 멀티스크린</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ko-05.png" alt="스마트 알람" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ko-05.png" alt="스마트 알람" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">스마트 알람</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ko-06.png" alt="금고 및 포트폴리오" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ko-06.png" alt="금고 및 포트폴리오" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">금고 및 포트폴리오</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ko-07.png" alt="클라우드 동기화" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ko-07.png" alt="클라우드 동기화" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">클라우드 동기화</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ko-08.png" alt="시장 및 트렌드" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ko-08.png" alt="시장 및 트렌드" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">시장 및 트렌드</h4>
                 </div>
             </div>
         </div>
@@ -217,7 +264,7 @@
                         <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-robot"></i></div>
                         <div class="ml-4">
                             <h4 class="font-bold text-lg">자동 암호화폐 시그널</h4>
-                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">BTC 및 알트코인을 위한 로켓(돌파), 딥 헌터(과매도) 및 하이브리드 전략을 통한 연중무휴 패턴 감지 및 롱/숏 후보 레이더.</p>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">BTC 및 알트코인을 위한 연중무휴 패턴 감지 및 롱/숏 후보 레이더.</p>
                         </div>
                     </div>
                     
@@ -225,7 +272,7 @@
                         <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-chart-line"></i></div>
                         <div class="ml-4">
                             <h4 class="font-bold text-lg">호가창 및 고래 POC</h4>
-                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">VOL, RSI, 볼린저 밴드가 포함된 전문 차트. 거래량, 고래 POC(Point of Control), 매수/매도 압력을 단일 화면에서 읽어냅니다.</p>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">전문 차트. 거래량, 고래 POC, 매수/매도 압력을 단일 화면에서 읽어냅니다.</p>
                         </div>
                     </div>
                     
@@ -233,7 +280,7 @@
                         <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-calculator"></i></div>
                         <div class="ml-4">
                             <h4 class="font-bold text-lg">3방향 크로스 계산기</h4>
-                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">거래를 시작하기 전에 매수가, 수량, 목표가 및 수수료율을 입력하여 총 공제액, 총 수익 및 실제 순이익을 계산하세요.</p>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">거래를 시작하기 전에 목표가 및 수수료율을 입력하여 실제 순이익을 계산하세요.</p>
                         </div>
                     </div>
                 </div>
@@ -249,7 +296,7 @@
                 <div class="mb-3"><span class="text-bluePro font-semibold">알고리즘:</span> 로켓 전략 🚀</div>
                 <div class="mb-3"><span class="text-gold font-semibold">패턴:</span> 대칭 삼각형 돌파</div>
                 <div class="mb-6"><span class="text-greenUp font-semibold">신뢰도:</span> 88% (매우 높음)</div>
-                <div class="text-gray-400 leading-relaxed border-l-2 border-gray-700 pl-4">"시스템이 가격이 거래량(고래 POC)을 동반하며 수평 보합세를 위로 돌파했음을 감지했습니다. 강한 상승 움직임의 가능성이 존재합니다. 스탑로스 수준을 유지하며 포지션을 평가할 수 있습니다."</div>
+                <div class="text-gray-400 leading-relaxed border-l-2 border-gray-700 pl-4">"시스템이 가격이 거래량(고래 POC)을 동반하며 수평 보합세를 위로 돌파했음을 감지했습니다. 강한 상승 움직임의 가능성이 존재합니다."</div>
             </div>
         </div>
     </section>
@@ -258,33 +305,28 @@
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-black mb-4">모든 기기에서 동기화 및 접근 가능</h2>
             <p class="text-gray-400 mb-8 leading-relaxed text-base">
-                클라우드 동기화로 데이터를 옮기거나 로컬 백업/복원을 사용하세요. 원하는 통화를 선택하고 글꼴 크기를 맞춤 설정하세요.<br><strong class="text-white mt-2 block">지금 YTD를 다운로드하고 내 주머니 속에 AI의 힘을 담으세요!</strong>
+                클라우드 동기화로 데이터를 옮기거나 로컬 백업을 사용하세요.<br><strong class="text-white mt-2 block">지금 YTD를 다운로드하세요!</strong>
             </p>
             
             <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_25px_rgba(243,186,47,0.4)] mb-10">
-                <img src="Google_Play.png" alt="Google Play에서 다운로드" class="h-16 lg:h-20 w-auto object-contain">
+                <img src="assets/img/Google_Play.png" alt="Google Play에서 다운로드" class="h-16 lg:h-20 w-auto object-contain">
             </a>
             
             <div class="text-xs text-gray-500 max-w-3xl mx-auto italic mb-8">
-                (면책 조항: 이 애플리케이션의 분석 및 데이터는 인공 지능 알고리즘에 의해 생성되었으며 어떠한 경우에도 투자 조언(YTD)을 구성하지 않습니다. 암호화폐 투자는 높은 위험을 수반합니다.)
+                (면책 조항: 이 애플리케이션의 분석은 투자 조언을 구성하지 않습니다. 암호화폐 투자는 높은 위험을 수반합니다.)
             </div>
 
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-sm text-gray-600 border-t border-gray-900 pt-8">
                 <a href="https://docs.google.com/document/d/1se12jpj3VZfuHtXRXwn6x3jt23NGt8h0-v9zR--hKxM/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition">개인정보 처리방침</a>
-                <span>&copy; 2026 YTD 암호화폐 트래커 & AI 분석. 모든 권리 보유.</span>
+                <span>&copy; 2026 YTD 암호화폐 트래커. 모든 권리 보유.</span>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script>
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
         btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
-
-        if (window.innerWidth > 768) {
-            VanillaTilt.init(document.querySelector(".tilt-image"), { max: 12, speed: 400, glare: true, "max-glare": 0.15 });
-        }
     </script>
 </body>
 </html>

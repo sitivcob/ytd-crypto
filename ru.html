@@ -6,6 +6,17 @@
     <title>YTD Крипто Трекер & ИИ Радар</title>
     <meta name="description" content="Крипто-радар на базе ИИ, продвинутый анализ графиков и управление портфелем. Синхронизация на всех устройствах, безопасно и бесплатно.">
     
+    <meta property="og:title" content="YTD Крипто Трекер & ИИ Радар" />
+    <meta property="og:description" content="Крипто-радар на базе ИИ, продвинутый анализ графиков и управление портфелем. Синхронизация на всех устройствах, безопасно и бесплатно." />
+    <meta property="og:image" content="https://sitivcob.github.io/ytd-crypto/assets/img/ytd-logo.png" />
+    <meta property="og:url" content="https://sitivcob.github.io/ytd-crypto/ru.html" />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="YTD Крипто Трекер & ИИ Радар" />
+    <meta name="twitter:description" content="Крипто-радар на базе ИИ, продвинутый анализ графиков и управление портфелем." />
+    <meta name="twitter:image" content="https://sitivcob.github.io/ytd-crypto/assets/img/ru-02.png" />
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,13 +27,22 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'], },
-                    colors: { darkBg: '#0B0E14', cardBg: '#151924', gold: '#F3BA2F', greenUp: '#00C582', redDown: '#FF3358', bluePro: '#2962FF' }
+                    colors: { darkBg: '#0B0E14', cardBg: '#151924', gold: '#F3BA2F', greenUp: '#00C582', redDown: '#FF3358', bluePro: '#2962FF' },
+                    animation: { 'float': 'float 6s ease-in-out infinite' },
+                    keyframes: { float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-15px)' } } }
                 }
             }
         }
     </script>
+
+    <style>
+        .tooltip-text { visibility: hidden; opacity: 0; transition: all 0.3s ease; transform: translateY(10px); }
+        .group:hover .tooltip-text { visibility: visible; opacity: 1; transform: translateY(0); }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 </head>
-<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative">
+<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative overflow-x-hidden">
 
     <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-bluePro/10 blur-[150px] pointer-events-none -z-10"></div>
     <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gold/5 blur-[150px] pointer-events-none -z-10"></div>
@@ -30,8 +50,8 @@
     <nav class="fixed w-full z-50 bg-darkBg/90 backdrop-blur-xl border-b border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
-                    <img src="ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
+                <div class="flex items-center gap-3 hover:scale-105 transition-transform duration-300">
+                    <img src="assets/img/ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
                     <span class="font-bold text-lg lg:text-xl tracking-tight hidden sm:block">YTD <span class="text-gold">Крипто Трекер</span></span>
                 </div>
                 
@@ -40,23 +60,42 @@
                     <a href="#gallery" class="text-gray-300 hover:text-white transition font-medium">Экраны</a>
                     <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">Про-графики</a>
                     
-                    <!-- Masaüstü Dil Seçici -->
-                    <div class="flex items-center gap-3 ml-4 pl-4 border-l border-gray-700 text-xl">
-                        <a href="index.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="English"><span class="fi fi-gb rounded-sm"></span></a>
-                        <a href="tr.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Türkçe"><span class="fi fi-tr rounded-sm"></span></a>
-                        <a href="de.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Deutsch"><span class="fi fi-de rounded-sm"></span></a>
-                        <a href="fr.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Français"><span class="fi fi-fr rounded-sm"></span></a>
-                        <a href="es.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Español"><span class="fi fi-es rounded-sm"></span></a>
-                        <a href="ja.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="日本語"><span class="fi fi-jp rounded-sm"></span></a>
-                        <a href="ko.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="한국어"><span class="fi fi-kr rounded-sm"></span></a>
-                        <a href="pt.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Português"><span class="fi fi-pt rounded-sm"></span></a>
-                        <a href="ru.html" class="scale-110 drop-shadow-[0_0_8px_rgba(243,186,47,0.8)]" title="Русский"><span class="fi fi-ru rounded-sm"></span></a>
+                    <div class="flex items-center gap-2 ml-4 pl-6 border-l border-gray-800 text-xl bg-cardBg/50 px-4 py-2 rounded-full shadow-inner">
+                        <a href="index.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-gb rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">English</span>
+                        </a>
+                        <a href="tr.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-tr rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Türkçe</span>
+                        </a>
+                        <a href="de.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-de rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Deutsch</span>
+                        </a>
+                        <a href="fr.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-fr rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Français</span>
+                        </a>
+                        <a href="es.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-es rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Español</span>
+                        </a>
+                        <a href="ja.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-jp rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">日本語</span>
+                        </a>
+                        <a href="ko.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-kr rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">한국어</span>
+                        </a>
+                        <a href="pt.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-pt rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Português</span>
+                        </a>
+                        <div class="w-px h-5 bg-gray-700 mx-1"></div>
+                        <div class="group relative flex flex-col items-center cursor-pointer">
+                            <span class="fi fi-ru rounded-sm shadow-[0_0_10px_rgba(243,186,47,0.8)] border border-gold scale-110"></span>
+                            <span class="tooltip-text absolute top-10 bg-darkBg border border-gold/50 text-gold text-xs font-bold px-3 py-1.5 rounded-lg shadow-xl whitespace-nowrap z-50">Русский</span>
+                        </div>
                     </div>
                 </div>
 
                 <div class="flex items-center gap-3 sm:gap-4">
                     <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-0.5 transition duration-300 hover:drop-shadow-[0_0_15px_rgba(243,186,47,0.4)]">
-                        <img src="Google_Play.png" alt="Доступно в Google Play" class="h-9 sm:h-10 w-auto object-contain">
+                        <img src="assets/img/Google_Play.png" alt="Доступно в Google Play" class="h-9 sm:h-10 w-auto object-contain">
                     </a>
                     <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none ml-2">
                         <i class="fa-solid fa-bars text-2xl"></i>
@@ -65,7 +104,6 @@
             </div>
         </div>
 
-        <!-- Mobil Açılır Menü -->
         <div id="mobile-menu" class="hidden md:hidden bg-darkBg/95 backdrop-blur-xl border-b border-gray-800 shadow-2xl absolute w-full left-0 top-20 transition-all duration-300">
             <div class="px-4 pt-4 pb-6 flex flex-col space-y-4 text-center">
                 <a href="#features" class="text-gray-300 hover:text-white font-medium text-lg block py-2">Функции</a>
@@ -81,7 +119,7 @@
                     <a href="ja.html" class="opacity-60"><span class="fi fi-jp rounded-sm"></span></a>
                     <a href="ko.html" class="opacity-60"><span class="fi fi-kr rounded-sm"></span></a>
                     <a href="pt.html" class="opacity-60"><span class="fi fi-pt rounded-sm"></span></a>
-                    <a href="ru.html" class="drop-shadow-[0_0_8px_rgba(243,186,47,0.8)]"><span class="fi fi-ru rounded-sm"></span></a>
+                    <span class="fi fi-ru rounded-sm drop-shadow-[0_0_8px_rgba(243,186,47,0.8)] border border-gold"></span>
                 </div>
             </div>
         </div>
@@ -110,7 +148,7 @@
                 <div class="flex flex-col items-center lg:items-start gap-4">
                     <div class="flex flex-col sm:flex-row items-center gap-4">
                         <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_20px_rgba(243,186,47,0.4)]">
-                            <img src="Google_Play.png" alt="Доступно в Google Play" class="h-14 lg:h-16 w-auto object-contain">
+                            <img src="assets/img/Google_Play.png" alt="Доступно в Google Play" class="h-14 lg:h-16 w-auto object-contain">
                         </a>
                         <a href="#features" class="px-8 py-4 rounded-xl font-bold text-lg text-white border border-gray-700 hover:bg-gray-800 transition flex items-center justify-center">
                             Изучить функции
@@ -126,9 +164,9 @@
                 </div>
             </div>
             
-            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
+            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center animate-float z-20">
                 <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
-                <img src="ru-02.png" alt="YTD Отчет о покупке (Спот)" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
+                <img src="assets/img/ru-02.png" alt="Отчет о покупке" class="relative z-10 w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]">
             </div>
         </div>
     </section>
@@ -140,30 +178,38 @@
                 <p class="text-gray-400 max-w-2xl mx-auto text-lg">От облачной синхронизации до отслеживания на 4 экранах — весь арсенал, необходимый профессиональному трейдеру.</p>
             </div>
             
-            <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ru-01.png" alt="ИИ Анализ Графиков" class="w-full h-auto">
+            <div class="flex overflow-x-auto gap-4 pb-10 hide-scroll snap-x snap-mandatory lg:grid lg:grid-cols-4 lg:gap-8 lg:overflow-visible">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ru-01.png" alt="ИИ Анализ Графиков" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">ИИ Анализ Графиков</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ru-02.png" alt="Отчет о покупке (Спот)" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ru-02.png" alt="Отчет о покупке (Спот)" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Отчет о покупке (Спот)</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ru-03.png" alt="Отчет о покупке (Фьючерсы)" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ru-03.png" alt="Отчет о покупке (Фьючерсы)" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Отчет о покупке (Фьючерсы)</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ru-04.png" alt="Мультиэкран Pro" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ru-04.png" alt="Мультиэкран Pro" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Мультиэкран Pro</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ru-05.png" alt="Умные будильники" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ru-05.png" alt="Умные будильники" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Умные будильники</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ru-06.png" alt="Хранилище и Портфель" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ru-06.png" alt="Хранилище и Портфель" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Хранилище и Портфель</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ru-07.png" alt="Облачная синхронизация" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ru-07.png" alt="Облачная синхронизация" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Облачная синхронизация</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="ru-08.png" alt="Рынки и Тренды" class="w-full h-auto">
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/ru-08.png" alt="Рынки и Тренды" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Рынки и Тренды</h4>
                 </div>
             </div>
         </div>
@@ -173,7 +219,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl lg:text-5xl font-black mb-4 tracking-tight">Инновационные функции</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Выйдите за рамки обычных приложений для отслеживания. Познакомьтесь с умным помощником, который следит, читает и слушает рынок за вас.</p>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Выйдите за рамки обычных приложений для отслеживания. Познакомьтесь с умным помощником, который следит за рынком.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -183,16 +229,16 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3">Ночной страж</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
-                        Если начнется внезапный обвал или паническая продажа, пока вы спите, система проснется и немедленно предупредит вас. Ваши инвестиции в безопасности 24/7.
+                        Если начнется внезапный обвал, пока вы спите, система проснется и немедленно предупредит вас. Ваши инвестиции в безопасности 24/7.
                     </p>
                 </div>
                 <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
                     <div class="w-14 h-14 bg-bluePro/10 rounded-2xl flex items-center justify-center text-bluePro text-2xl mb-6 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(41,98,255,0.1)]">
                         <i class="fa-solid fa-headphones"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Голосовой помощник и виджет</h3>
+                    <h3 class="text-xl font-bold mb-3">Голосовой помощник</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
-                        Слушайте актуальные цены через наушники в дороге. Или следите за ними прямо с панели уведомлений и виджета на главном экране, не открывая приложение.
+                        Слушайте актуальные цены через наушники в дороге. Или следите за ними прямо с панели уведомлений и виджета.
                     </p>
                 </div>
                 <div class="bg-gradient-to-b from-cardBg to-darkBg p-8 rounded-[2rem] border border-gray-800/60 hover:border-gold/30 transition-all duration-300 group">
@@ -201,7 +247,7 @@
                     </div>
                     <h3 class="text-xl font-bold mb-3">ИИ-Доктор Портфеля</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
-                        Отслеживайте прибыль/убыток в реальном времени. Искусственный интеллект анализирует распределение ваших активов и предоставляет подробный отчет о рисках.
+                        Отслеживайте прибыль/убыток в реальном времени. ИИ анализирует распределение ваших активов и предоставляет отчет о рисках.
                     </p>
                 </div>
             </div>
@@ -217,7 +263,7 @@
                         <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-robot"></i></div>
                         <div class="ml-4">
                             <h4 class="font-bold text-lg">Автоматические криптосигналы</h4>
-                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Круглосуточное обнаружение паттернов и радар кандидатов в Long/Short со стратегиями Ракета (Пробой), Охотник за дном (Перепроданность) и Гибрид для BTC и альткоинов.</p>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Круглосуточное обнаружение паттернов и радар Long/Short для BTC и альткоинов.</p>
                         </div>
                     </div>
                     
@@ -225,15 +271,15 @@
                         <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-chart-line"></i></div>
                         <div class="ml-4">
                             <h4 class="font-bold text-lg">Глубина и POC Китов</h4>
-                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Профессиональные графики с VOL, RSI, Полосами Боллинджера. Читайте объемы, POC (Точку контроля) китов и давление покупателей/продавцов на одном экране.</p>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Профессиональные графики. Читайте объемы, POC китов и давление покупателей на одном экране.</p>
                         </div>
                     </div>
                     
                     <div class="bg-black/30 p-5 rounded-2xl border border-gray-800/80 hover:border-gold/30 transition flex items-start group">
                         <div class="mt-1 w-10 h-10 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-lg shrink-0 group-hover:bg-gold group-hover:text-black transition-colors"><i class="fa-solid fa-calculator"></i></div>
                         <div class="ml-4">
-                            <h4 class="font-bold text-lg">3-сторонний кросс-калькулятор</h4>
-                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Рассчитайте общую комиссию, валовую прибыль и реальную чистую прибыль перед открытием сделки, указав цену покупки, объем, цель и комиссионные.</p>
+                            <h4 class="font-bold text-lg">Кросс-калькулятор</h4>
+                            <p class="text-gray-400 text-sm mt-1 leading-relaxed">Рассчитайте общую комиссию и реальную чистую прибыль перед открытием сделки.</p>
                         </div>
                     </div>
                 </div>
@@ -249,24 +295,24 @@
                 <div class="mb-3"><span class="text-bluePro font-semibold">Алгоритм:</span> Стратегия "Ракета" 🚀</div>
                 <div class="mb-3"><span class="text-gold font-semibold">Паттерн:</span> Пробой симметричного треугольника</div>
                 <div class="mb-6"><span class="text-greenUp font-semibold">Надежность:</span> 88% (Очень высокая)</div>
-                <div class="text-gray-400 leading-relaxed border-l-2 border-gray-700 pl-4">"Система обнаружила, что цена пробила горизонтальную консолидацию вверх на объемах (POC китов). Существует высокая вероятность восходящего движения. Позицию можно рассматривать с сохранением уровня стоп-лосса."</div>
+                <div class="text-gray-400 leading-relaxed border-l-2 border-gray-700 pl-4">"Система обнаружила пробой горизонтальной консолидации вверх на объемах (POC китов). Существует высокая вероятность восходящего движения."</div>
             </div>
         </div>
     </section>
 
     <footer id="download" class="bg-black py-16 border-t border-gray-900 relative">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-black mb-4">Синхронизация и доступность на всех ваших устройствах</h2>
+            <h2 class="text-3xl font-black mb-4">Доступность на всех ваших устройствах</h2>
             <p class="text-gray-400 mb-8 leading-relaxed text-base">
-                Переносите свои данные с помощью облачной синхронизации или используйте локальное резервное копирование. Выбирайте любую валюту, настраивайте размер шрифта.<br><strong class="text-white mt-2 block">Скачайте YTD прямо сейчас и носите мощь ИИ в своем кармане!</strong>
+                Переносите свои данные с помощью облачной синхронизации. Выбирайте любую валюту.<br><strong class="text-white mt-2 block">Скачайте YTD прямо сейчас!</strong>
             </p>
             
             <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_25px_rgba(243,186,47,0.4)] mb-10">
-                <img src="Google_Play.png" alt="Доступно в Google Play" class="h-16 lg:h-20 w-auto object-contain">
+                <img src="assets/img/Google_Play.png" alt="Доступно в Google Play" class="h-16 lg:h-20 w-auto object-contain">
             </a>
             
             <div class="text-xs text-gray-500 max-w-3xl mx-auto italic mb-8">
-                (Отказ от ответственности: Анализ и данные в этом приложении генерируются алгоритмами искусственного интеллекта и ни в коем случае не являются инвестиционным советом (YTD). Инвестиции в криптовалюты сопряжены с высоким риском.)
+                (Отказ от ответственности: Данные не являются инвестиционным советом. Инвестиции в криптовалюты сопряжены с высоким риском.)
             </div>
 
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 text-sm text-gray-600 border-t border-gray-900 pt-8">
@@ -276,15 +322,10 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script>
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
         btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
-
-        if (window.innerWidth > 768) {
-            VanillaTilt.init(document.querySelector(".tilt-image"), { max: 12, speed: 400, glare: true, "max-glare": 0.15 });
-        }
     </script>
 </body>
 </html>
