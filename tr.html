@@ -6,6 +6,19 @@
     <title>YTD Kripto Takip & AI Analizi</title>
     <meta name="description" content="Yapay zeka destekli kripto radarı, gelişmiş grafik analizi ve portföy yönetimi. Tüm cihazlarınızda senkronize, güvenli ve ücretsiz.">
     
+    <!-- Open Graph (WhatsApp, Facebook vb. Sosyal Medya Önizlemeleri) -->
+    <meta property="og:title" content="YTD Kripto Takip & AI Analizi" />
+    <meta property="og:description" content="Yapay zeka destekli kripto radarı, gelişmiş grafik analizi ve portföy yönetimi. Tüm cihazlarınızda senkronize, güvenli ve ücretsiz." />
+    <meta property="og:image" content="https://sitivcob.github.io/ytd-crypto/assets/img/ytd-logo.png" />
+    <meta property="og:url" content="https://sitivcob.github.io/ytd-crypto/tr.html" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Paylaşım Önizlemeleri -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="YTD Kripto Takip & AI Analizi" />
+    <meta name="twitter:description" content="Yapay zeka destekli kripto radarı, gelişmiş grafik analizi ve portföy yönetimi." />
+    <meta name="twitter:image" content="https://sitivcob.github.io/ytd-crypto/assets/img/tr-02.png" />
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
@@ -23,21 +36,18 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        darkBg: '#0B0E14',
-                        cardBg: '#151924',
-                        gold: '#F3BA2F',
-                        greenUp: '#00C582',
-                        redDown: '#FF3358',
-                        bluePro: '#2962FF'
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'], },
+                    colors: { darkBg: '#0B0E14', cardBg: '#151924', gold: '#F3BA2F', greenUp: '#00C582', redDown: '#FF3358', bluePro: '#2962FF' }
                 }
             }
         }
     </script>
+
+    <!-- YENİ: Dil İsim Baloncukları İçin Stil -->
+    <style>
+        .tooltip-text { visibility: hidden; opacity: 0; transition: all 0.3s ease; transform: translateY(10px); }
+        .group:hover .tooltip-text { visibility: visible; opacity: 1; transform: translateY(0); }
+    </style>
 </head>
 <body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative">
 
@@ -50,7 +60,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center gap-3">
-                    <img src="ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
+                    <img src="assets/img/ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
                     <span class="font-bold text-lg lg:text-xl tracking-tight hidden sm:block">YTD <span class="text-gold">Kripto Takip</span></span>
                 </div>
                 
@@ -60,24 +70,44 @@
                     <a href="#galeri" class="text-gray-300 hover:text-white transition font-medium">Ekranlar</a>
                     <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">Pro Grafik</a>
                     
-                    <!-- DİL SEÇİCİ (Masaüstü - TÜRKÇE AKTİF) -->
-                    <div class="flex items-center gap-3 ml-4 pl-4 border-l border-gray-700 text-xl">
-                        <a href="index.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="English"><span class="fi fi-gb rounded-sm"></span></a>
-                        <a href="tr.html" class="scale-110 drop-shadow-[0_0_8px_rgba(243,186,47,0.8)]" title="Türkçe"><span class="fi fi-tr rounded-sm"></span></a>
-                        <a href="de.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Deutsch"><span class="fi fi-de rounded-sm"></span></a>
-                        <a href="fr.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Français"><span class="fi fi-fr rounded-sm"></span></a>
-                        <a href="es.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Español"><span class="fi fi-es rounded-sm"></span></a>
-                        <a href="ja.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="日本語"><span class="fi fi-jp rounded-sm"></span></a>
-                        <a href="ko.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="한국어"><span class="fi fi-kr rounded-sm"></span></a>
-                        <a href="pt.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Português"><span class="fi fi-pt rounded-sm"></span></a>
-                        <a href="ru.html" class="hover:scale-110 transition transform opacity-60 hover:opacity-100" title="Русский"><span class="fi fi-ru rounded-sm"></span></a>
+                    <!-- YENİ: Tooltip (Balon) Destekli Masaüstü Dil Seçici (Türkçe Aktif) -->
+                    <div class="flex items-center gap-3 ml-4 pl-6 border-l border-gray-800 text-xl bg-cardBg/50 px-4 py-2 rounded-full shadow-inner">
+                        <a href="index.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-gb rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">English</span>
+                        </a>
+                        <div class="group relative flex flex-col items-center cursor-pointer">
+                            <span class="fi fi-tr rounded-sm shadow-[0_0_10px_rgba(243,186,47,0.8)] border border-gold scale-110"></span>
+                            <span class="tooltip-text absolute top-10 bg-darkBg border border-gold/50 text-gold text-xs font-bold px-3 py-1.5 rounded-lg shadow-xl whitespace-nowrap z-50">Türkçe</span>
+                        </div>
+                        <div class="w-px h-5 bg-gray-700 mx-1"></div>
+                        <a href="de.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-de rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Deutsch</span>
+                        </a>
+                        <a href="fr.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-fr rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Français</span>
+                        </a>
+                        <a href="es.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-es rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Español</span>
+                        </a>
+                        <a href="ja.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-jp rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">日本語</span>
+                        </a>
+                        <a href="ko.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-kr rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">한국어</span>
+                        </a>
+                        <a href="pt.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-pt rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Português</span>
+                        </a>
+                        <a href="ru.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
+                            <span class="fi fi-ru rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">Русский</span>
+                        </a>
                     </div>
                 </div>
 
                 <!-- Sağ Taraf (Mobil Buton + Google Play) -->
                 <div class="flex items-center gap-3 sm:gap-4">
                     <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-0.5 transition duration-300 hover:drop-shadow-[0_0_15px_rgba(243,186,47,0.4)]">
-                        <img src="Google_Play.png" alt="Google Play'den İndir" class="h-9 sm:h-10 w-auto object-contain">
+                        <img src="assets/img/Google_Play.png" alt="Google Play'den İndir" class="h-9 sm:h-10 w-auto object-contain">
                     </a>
                     
                     <!-- YENİ: Mobil Hamburger Menü Butonu -->
@@ -98,7 +128,7 @@
                 <!-- DİL SEÇİCİ (Mobil Alt Kısım) -->
                 <div class="pt-4 mt-2 border-t border-gray-700 flex flex-wrap justify-center gap-5 text-2xl">
                     <a href="index.html" class="opacity-60"><span class="fi fi-gb rounded-sm"></span></a>
-                    <a href="tr.html" class="drop-shadow-[0_0_8px_rgba(243,186,47,0.8)]"><span class="fi fi-tr rounded-sm"></span></a>
+                    <span class="fi fi-tr rounded-sm drop-shadow-[0_0_8px_rgba(243,186,47,0.8)] border border-gold"></span>
                     <a href="de.html" class="opacity-60"><span class="fi fi-de rounded-sm"></span></a>
                     <a href="fr.html" class="opacity-60"><span class="fi fi-fr rounded-sm"></span></a>
                     <a href="es.html" class="opacity-60"><span class="fi fi-es rounded-sm"></span></a>
@@ -135,7 +165,7 @@
                 <div class="flex flex-col items-center lg:items-start gap-4">
                     <div class="flex flex-col sm:flex-row items-center gap-4">
                         <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_20px_rgba(243,186,47,0.4)]">
-                            <img src="Google_Play.png" alt="Google Play'den İndir" class="h-14 lg:h-16 w-auto object-contain">
+                            <img src="assets/img/Google_Play.png" alt="Google Play'den İndir" class="h-14 lg:h-16 w-auto object-contain">
                         </a>
                         <a href="#ozellikler" class="px-8 py-4 rounded-xl font-bold text-lg text-white border border-gray-700 hover:bg-gray-800 transition flex items-center justify-center">
                             Özellikleri Keşfet
@@ -157,7 +187,7 @@
             
             <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
                 <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
-                <img src="tr-02.png" alt="YTD Spot Al Raporu" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
+                <img src="assets/img/tr-02.png" alt="YTD Spot Al Raporu" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
             </div>
         </div>
     </section>
@@ -172,28 +202,28 @@
             
             <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
                 <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="tr-01.png" alt="AI Grafik Analizi" class="w-full h-auto">
+                    <img src="assets/img/tr-01.png" alt="AI Grafik Analizi" class="w-full h-auto">
                 </div>
                 <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="tr-02.png" alt="Spot Al Raporu" class="w-full h-auto">
+                    <img src="assets/img/tr-02.png" alt="Spot Al Raporu" class="w-full h-auto">
                 </div>
                 <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="tr-03.png" alt="Vadeli Al Raporu" class="w-full h-auto">
+                    <img src="assets/img/tr-03.png" alt="Vadeli Al Raporu" class="w-full h-auto">
                 </div>
                 <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="tr-04.png" alt="Pro Çoklu Ekran" class="w-full h-auto">
+                    <img src="assets/img/tr-04.png" alt="Pro Çoklu Ekran" class="w-full h-auto">
                 </div>
                 <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="tr-05.png" alt="Akıllı Alarmlar" class="w-full h-auto">
+                    <img src="assets/img/tr-05.png" alt="Akıllı Alarmlar" class="w-full h-auto">
                 </div>
                 <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="tr-06.png" alt="Kasa ve Portföy" class="w-full h-auto">
+                    <img src="assets/img/tr-06.png" alt="Kasa ve Portföy" class="w-full h-auto">
                 </div>
                 <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="tr-07.png" alt="Bulut Senkronizasyonu" class="w-full h-auto">
+                    <img src="assets/img/tr-07.png" alt="Bulut Senkronizasyonu" class="w-full h-auto">
                 </div>
                 <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="tr-08.png" alt="Piyasalar ve Trendler" class="w-full h-auto">
+                    <img src="assets/img/tr-08.png" alt="Piyasalar ve Trendler" class="w-full h-auto">
                 </div>
             </div>
         </div>
@@ -295,7 +325,7 @@
             </p>
             
             <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-1 transition duration-300 hover:drop-shadow-[0_0_25px_rgba(243,186,47,0.4)] mb-10">
-                <img src="Google_Play.png" alt="Google Play'den İndir" class="h-16 lg:h-20 w-auto object-contain">
+                <img src="assets/img/Google_Play.png" alt="Google Play'den İndir" class="h-16 lg:h-20 w-auto object-contain">
             </a>
             
             <div class="text-xs text-gray-500 max-w-3xl mx-auto italic mb-8">
