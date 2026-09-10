@@ -50,27 +50,31 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'], },
-                    colors: { darkBg: '#0B0E14', cardBg: '#151924', gold: '#F3BA2F', greenUp: '#00C582', redDown: '#FF3358', bluePro: '#2962FF' }
+                    colors: { darkBg: '#0B0E14', cardBg: '#151924', gold: '#F3BA2F', greenUp: '#00C582', redDown: '#FF3358', bluePro: '#2962FF' },
+                    animation: { 'float': 'float 6s ease-in-out infinite' },
+                    keyframes: { float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-15px)' } } }
                 }
             }
         }
     </script>
 
-    <!-- YENİ: Dil İsim Baloncukları İçin Stil -->
     <style>
         .tooltip-text { visibility: hidden; opacity: 0; transition: all 0.3s ease; transform: translateY(10px); }
         .group:hover .tooltip-text { visibility: visible; opacity: 1; transform: translateY(0); }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative">
+<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative overflow-x-hidden">
 
     <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-bluePro/10 blur-[150px] pointer-events-none -z-10"></div>
     <div class="fixed bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-gold/5 blur-[150px] pointer-events-none -z-10"></div>
 
+    <!-- NAVBAR -->
     <nav class="fixed w-full z-50 bg-darkBg/90 backdrop-blur-xl border-b border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3 hover:scale-105 transition-transform duration-300">
                     <img src="assets/img/ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
                     <span class="font-bold text-lg lg:text-xl tracking-tight hidden sm:block">YTD <span class="text-gold">Crypto Tracker</span></span>
                 </div>
@@ -81,8 +85,8 @@
                     <a href="#gallery" class="text-gray-300 hover:text-white transition font-medium">Screens</a>
                     <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">Pro Chart</a>
                     
-                    <!-- YENİ: Tooltip (Balon) Destekli Masaüstü Dil Seçici (English Active) -->
-                    <div class="flex items-center gap-3 ml-4 pl-6 border-l border-gray-800 text-xl bg-cardBg/50 px-4 py-2 rounded-full shadow-inner">
+                    <!-- DİL MENÜSÜ -->
+                    <div class="flex items-center gap-2 ml-4 pl-6 border-l border-gray-800 text-xl bg-cardBg/50 px-4 py-2 rounded-full shadow-inner">
                         <div class="group relative flex flex-col items-center cursor-pointer">
                             <span class="fi fi-gb rounded-sm shadow-[0_0_10px_rgba(243,186,47,0.8)] border border-gold scale-110"></span>
                             <span class="tooltip-text absolute top-10 bg-darkBg border border-gold/50 text-gold text-xs font-bold px-3 py-1.5 rounded-lg shadow-xl whitespace-nowrap z-50">English</span>
@@ -126,7 +130,6 @@
             </div>
         </div>
 
-        <!-- Mobil Açılır Menü -->
         <div id="mobile-menu" class="hidden md:hidden bg-darkBg/95 backdrop-blur-xl border-b border-gray-800 shadow-2xl absolute w-full left-0 top-20 transition-all duration-300">
             <div class="px-4 pt-4 pb-6 flex flex-col space-y-4 text-center">
                 <a href="#features" class="text-gray-300 hover:text-white font-medium text-lg block py-2">Features</a>
@@ -148,6 +151,7 @@
         </div>
     </nav>
 
+    <!-- HERO -->
     <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 px-4 overflow-hidden relative">
         <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
             <div class="flex-1 text-center lg:text-left z-10">
@@ -187,45 +191,65 @@
                 </div>
             </div>
             
-            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
+            <!-- HİÇBİR CSS KUTUSU YOK! TERTEMİZ PNG VE SÜZÜLME EFEKTİ -->
+            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center animate-float z-20">
                 <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
-                <img src="assets/img/eng-02.png" alt="YTD Spot Buy Report" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
+                <img src="assets/img/eng-02.png" alt="YTD Spot Buy Report" class="relative z-10 w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]">
             </div>
         </div>
     </section>
 
+    <!-- GALERİ (HİÇBİR ÇERÇEVE, KUTU VE ARKA PLAN YOK - SADECE SAF PNG VE GÖLGE) -->
     <section id="gallery" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl lg:text-5xl font-black mb-4 tracking-tight">Rule the Entire Market</h2>
                 <p class="text-gray-400 max-w-2xl mx-auto text-lg">From cloud synchronization to 4-way Pro Multi-Screen tracking, all the arsenal a professional trader needs.</p>
             </div>
-            
-            <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/eng-01.png" alt="AI Chart Analysis" class="w-full h-auto">
+
+            <!-- TERTEMİZ YATAY KAYDIRILABİLİR PNG GALERİSİ -->
+            <div class="flex overflow-x-auto gap-4 pb-10 hide-scroll snap-x snap-mandatory lg:grid lg:grid-cols-4 lg:gap-8 lg:overflow-visible">
+                
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/eng-01.png" alt="AI Chart Analysis" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">AI Chart Analysis</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/eng-02.png" alt="Spot Buy Report" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/eng-02.png" alt="Spot Buy Report" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Spot Buy Report</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/eng-03.png" alt="Futures Buy Report" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/eng-03.png" alt="Futures Buy Report" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Futures Buy Report</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/eng-04.png" alt="Pro Multi-Screen" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/eng-04.png" alt="Pro Multi-Screen" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Pro Multi-Screen</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/eng-05.png" alt="Smart Alarms" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/eng-05.png" alt="Smart Alarms" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Smart Alarms</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/eng-06.png" alt="Vault & Portfolio" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/eng-06.png" alt="Vault & Portfolio" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Vault & Portfolio</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/eng-07.png" alt="Cloud Sync" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/eng-07.png" alt="Cloud Sync" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Cloud Sync</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/eng-08.png" alt="Markets & Trends" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/eng-08.png" alt="Markets & Trends" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Markets & Trends</h4>
                 </div>
+
             </div>
         </div>
     </section>
@@ -315,7 +339,7 @@
         </div>
     </section>
 
-    <footer id="indir" class="bg-black py-16 border-t border-gray-900 relative">
+    <footer id="download" class="bg-black py-16 border-t border-gray-900 relative">
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-3xl font-black mb-4">Synchronized and Accessible on All Your Devices</h2>
             <p class="text-gray-400 mb-8 leading-relaxed text-base">
@@ -337,7 +361,6 @@
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
     <script>
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
@@ -345,15 +368,6 @@
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
-
-        if (window.innerWidth > 768) {
-            VanillaTilt.init(document.querySelector(".tilt-image"), {
-                max: 12,
-                speed: 400,
-                glare: true,
-                "max-glare": 0.15
-            });
-        }
     </script>
 </body>
 </html>

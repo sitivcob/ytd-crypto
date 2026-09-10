@@ -37,19 +37,22 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter', 'sans-serif'], },
-                    colors: { darkBg: '#0B0E14', cardBg: '#151924', gold: '#F3BA2F', greenUp: '#00C582', redDown: '#FF3358', bluePro: '#2962FF' }
+                    colors: { darkBg: '#0B0E14', cardBg: '#151924', gold: '#F3BA2F', greenUp: '#00C582', redDown: '#FF3358', bluePro: '#2962FF' },
+                    animation: { 'float': 'float 6s ease-in-out infinite' },
+                    keyframes: { float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-15px)' } } }
                 }
             }
         }
     </script>
 
-    <!-- YENİ: Dil İsim Baloncukları İçin Stil -->
     <style>
         .tooltip-text { visibility: hidden; opacity: 0; transition: all 0.3s ease; transform: translateY(10px); }
         .group:hover .tooltip-text { visibility: visible; opacity: 1; transform: translateY(0); }
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative">
+<body class="bg-darkBg text-white font-sans antialiased selection:bg-gold selection:text-black relative overflow-x-hidden">
 
     <!-- ARKA PLAN GÖRSEL ZENGİNLİĞİ -->
     <div class="fixed top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-bluePro/10 blur-[150px] pointer-events-none -z-10"></div>
@@ -59,19 +62,19 @@
     <nav class="fixed w-full z-50 bg-darkBg/90 backdrop-blur-xl border-b border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3 hover:scale-105 transition-transform duration-300">
                     <img src="assets/img/ytd-logo.png" alt="YTD Logo" class="h-10 lg:h-11 w-auto object-contain drop-shadow-[0_0_8px_rgba(243,186,47,0.3)]">
                     <span class="font-bold text-lg lg:text-xl tracking-tight hidden sm:block">YTD <span class="text-gold">Kripto Takip</span></span>
                 </div>
                 
-                <!-- Masaüstü Menü (Mobilde Gizli) -->
+                <!-- Masaüstü Menü -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#ozellikler" class="text-gray-300 hover:text-white transition font-medium">Özellikler</a>
                     <a href="#galeri" class="text-gray-300 hover:text-white transition font-medium">Ekranlar</a>
                     <a href="#ai-radar" class="text-gray-300 hover:text-white transition font-medium">Pro Grafik</a>
                     
-                    <!-- YENİ: Tooltip (Balon) Destekli Masaüstü Dil Seçici (Türkçe Aktif) -->
-                    <div class="flex items-center gap-3 ml-4 pl-6 border-l border-gray-800 text-xl bg-cardBg/50 px-4 py-2 rounded-full shadow-inner">
+                    <!-- DİL MENÜSÜ -->
+                    <div class="flex items-center gap-2 ml-4 pl-6 border-l border-gray-800 text-xl bg-cardBg/50 px-4 py-2 rounded-full shadow-inner">
                         <a href="index.html" class="group relative flex flex-col items-center opacity-60 hover:opacity-100 transition hover:scale-110">
                             <span class="fi fi-gb rounded-sm"></span><span class="tooltip-text absolute top-10 bg-darkBg border border-gray-600 text-white text-xs px-2 py-1 rounded-lg shadow-xl whitespace-nowrap z-50">English</span>
                         </a>
@@ -109,8 +112,6 @@
                     <a href="https://play.google.com/store/apps/details?id=com.sitiv.cryptotracker" target="_blank" rel="noopener noreferrer" class="inline-block transform hover:-translate-y-0.5 transition duration-300 hover:drop-shadow-[0_0_15px_rgba(243,186,47,0.4)]">
                         <img src="assets/img/Google_Play.png" alt="Google Play'den İndir" class="h-9 sm:h-10 w-auto object-contain">
                     </a>
-                    
-                    <!-- YENİ: Mobil Hamburger Menü Butonu -->
                     <button id="mobile-menu-button" class="md:hidden text-gray-300 hover:text-white focus:outline-none ml-2">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
@@ -118,14 +119,13 @@
             </div>
         </div>
 
-        <!-- YENİ: Mobil Açılır Menü (Telefonda Tıklanınca Açılacak) -->
+        <!-- Mobil Açılır Menü -->
         <div id="mobile-menu" class="hidden md:hidden bg-darkBg/95 backdrop-blur-xl border-b border-gray-800 shadow-2xl absolute w-full left-0 top-20 transition-all duration-300">
             <div class="px-4 pt-4 pb-6 flex flex-col space-y-4 text-center">
                 <a href="#ozellikler" class="text-gray-300 hover:text-white font-medium text-lg block py-2">Özellikler</a>
                 <a href="#galeri" class="text-gray-300 hover:text-white font-medium text-lg block py-2">Ekranlar</a>
                 <a href="#ai-radar" class="text-gray-300 hover:text-white font-medium text-lg block py-2">Pro Grafik</a>
                 
-                <!-- DİL SEÇİCİ (Mobil Alt Kısım) -->
                 <div class="pt-4 mt-2 border-t border-gray-700 flex flex-wrap justify-center gap-5 text-2xl">
                     <a href="index.html" class="opacity-60"><span class="fi fi-gb rounded-sm"></span></a>
                     <span class="fi fi-tr rounded-sm drop-shadow-[0_0_8px_rgba(243,186,47,0.8)] border border-gold"></span>
@@ -185,14 +185,15 @@
                 </div>
             </div>
             
-            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center tilt-image">
+            <!-- HİÇBİR CSS KUTUSU YOK! TERTEMİZ PNG VE SÜZÜLME EFEKTİ -->
+            <div class="flex-1 relative w-full max-w-[22rem] lg:max-w-md mx-auto flex items-center justify-center animate-float z-20">
                 <div class="absolute inset-0 bg-gold/20 blur-[100px] rounded-full z-0 pointer-events-none"></div>
-                <img src="assets/img/tr-02.png" alt="YTD Spot Al Raporu" class="relative z-10 w-full h-auto rounded-[2.5rem] shadow-[0_30px_80px_rgba(0,0,0,0.9)] border border-gray-800/80">
+                <img src="assets/img/tr-02.png" alt="YTD Spot Al Raporu" class="relative z-10 w-full h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.7)]">
             </div>
         </div>
     </section>
 
-    <!-- GALERİ BÖLÜMÜ -->
+    <!-- GALERİ (HİÇBİR ÇERÇEVE, KUTU VE ARKA PLAN YOK - SADECE SAF PNG VE GÖLGE) -->
     <section id="galeri" class="py-24 bg-cardBg/30 border-t border-gray-800/50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -200,31 +201,49 @@
                 <p class="text-gray-400 max-w-2xl mx-auto text-lg">Bulut senkronizasyonundan, 4'lü Pro Çoklu Ekran takibine kadar profesyonel bir trader'ın ihtiyaç duyduğu tüm cephanelik.</p>
             </div>
             
-            <div class="flex flex-wrap justify-center gap-6 lg:gap-8">
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/tr-01.png" alt="AI Grafik Analizi" class="w-full h-auto">
+            <!-- TERTEMİZ YATAY KAYDIRILABİLİR PNG GALERİSİ -->
+            <div class="flex overflow-x-auto gap-4 pb-10 hide-scroll snap-x snap-mandatory lg:grid lg:grid-cols-4 lg:gap-8 lg:overflow-visible">
+                
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/tr-01.png" alt="AI Grafik Analizi" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">AI Grafik Analizi</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/tr-02.png" alt="Spot Al Raporu" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/tr-02.png" alt="Spot Al Raporu" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Spot Al Raporu</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/tr-03.png" alt="Vadeli Al Raporu" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/tr-03.png" alt="Vadeli Al Raporu" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Vadeli Al Raporu</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/tr-04.png" alt="Pro Çoklu Ekran" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/tr-04.png" alt="Pro Çoklu Ekran" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Pro Çoklu Ekran</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/tr-05.png" alt="Akıllı Alarmlar" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/tr-05.png" alt="Akıllı Alarmlar" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Akıllı Alarmlar</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/tr-06.png" alt="Kasa ve Portföy" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/tr-06.png" alt="Kasa ve Portföy" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Kasa ve Portföy</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/tr-07.png" alt="Bulut Senkronizasyonu" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/tr-07.png" alt="Bulut Senkronizasyonu" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Bulut Senkronizasyonu</h4>
                 </div>
-                <div class="w-[45%] sm:w-[30%] lg:w-[22%] rounded-[2rem] overflow-hidden shadow-2xl border border-gray-800/80 hover:border-gold/50 transition duration-500 transform hover:-translate-y-2">
-                    <img src="assets/img/tr-08.png" alt="Piyasalar ve Trendler" class="w-full h-auto">
+
+                <div class="shrink-0 w-64 lg:w-full snap-center flex flex-col items-center group cursor-pointer p-2">
+                    <img src="assets/img/tr-08.png" alt="Piyasalar ve Trendler" class="w-full h-auto drop-shadow-[0_15px_25px_rgba(0,0,0,0.5)] group-hover:drop-shadow-[0_20px_40px_rgba(243,186,47,0.4)] group-hover:-translate-y-4 group-hover:scale-105 transition-all duration-500">
+                    <h4 class="mt-6 font-bold text-gray-300 text-lg group-hover:text-gold transition-colors">Piyasalar ve Trendler</h4>
                 </div>
+
             </div>
         </div>
     </section>
@@ -339,28 +358,13 @@
         </div>
     </footer>
 
-    <!-- VanillaTilt Kütüphanesi -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
-    
-    <!-- YENİ: Mobil Menü Aç/Kapat Scripti ve Tilt Efekti -->
     <script>
-        // Mobil Menü Mantığı
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
 
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
-
-        // 3D Tilt Efekti (Sadece Bilgisayarda)
-        if (window.innerWidth > 768) {
-            VanillaTilt.init(document.querySelector(".tilt-image"), {
-                max: 12,
-                speed: 400,
-                glare: true,
-                "max-glare": 0.15
-            });
-        }
     </script>
 </body>
 </html>
